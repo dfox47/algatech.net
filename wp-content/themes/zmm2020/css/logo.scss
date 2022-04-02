@@ -1,0 +1,52 @@
+
+
+
+.logo,
+.logo:visited {
+	background: url(#{$i}/logo.png) no-repeat center center scroll transparent;
+	background-size: contain;
+	cursor: pointer;
+	display: inline-block;
+	height: 110px;
+	position: relative;
+	text-decoration: none;
+	transition: $transition;
+	width: 200px;
+	z-index: 5;
+
+	&:hover {
+		opacity: .7;
+	}
+
+	@media #{$tablet} {
+		background-image: url(#{$i}/logo_s.png);
+		height: 30px;
+		margin: 0 30px 0 0;
+		width: 30px;
+	}
+}
+
+.logo_partner {
+	//display: flex;
+	display: none;
+	flex-direction: column;
+
+	&__img {}
+
+	&__status {
+		font-size: 10px;
+		opacity: .5;
+		text-transform: uppercase;
+	}
+}
+
+.logo_wrap {
+	position: relative;
+
+	@media #{$tablet} {
+		align-items: center;
+		display: flex;
+	}
+}
+
+
