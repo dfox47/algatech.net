@@ -94,7 +94,13 @@ if ( isset($getenableorderscontrol) && $getenableorderscontrol =='140')
     add_shortcode ('woo_myorders', 'wshk_newstyle_myorders');
     
     //Sustituir plantilla del tema por la del plugin
-    add_filter( 'wc_get_template', 'wshk_cma_get_templatee', 10, 5 );
+    $disableorderstemplate = get_option('wshk_disableorderstemplate');
+    if ( isset($disableorderstemplate) && $disableorderstemplate =='22092021')
+    {
+    /*add_filter( 'wc_get_template', 'wshk_cma_get_templatee', 10, 5 );*/
+    } else {
+        add_filter( 'wc_get_template', 'wshk_cma_get_templatee', 10, 5 );
+    }
     function wshk_cma_get_templatee( $located, $template_name, $args, $template_path, $default_path ) {    
         if ( 'myaccount/view-order.php' == $template_name ) {
             $located = plugin_dir_path( __DIR__ ) . 'mytemplates/view-order.php';
@@ -107,7 +113,7 @@ if ( isset($getenableorderscontrol) && $getenableorderscontrol =='140')
 
 
 
-//Since v.1.6.6
+//Since v.1.6.6 - updated v.2.0.0
 
 //SHOW THE DOWNLOADS
 //Display the account edit form and let customize the data, If you want display in any page or post, use this shortcode [woo_mydownloads]
@@ -126,7 +132,7 @@ if ( isset($getenablemydownloadsht) && $getenablemydownloadsht =='2000')
             
             ob_start();
             if ($downloadsoptionone == '1'){
-                require dirname( __DIR__ ) . '/mytemplates/downloads.php';
+                require dirname( __DIR__ ) . '/mytemplates/freedownloads.php';
             } elseif ($downloadsoptionone == '2') {
                 require dirname( __DIR__ ) . '/mytemplates/my-downloads.php';
             }
@@ -134,24 +140,25 @@ if ( isset($getenablemydownloadsht) && $getenablemydownloadsht =='2000')
         }
     }
     add_shortcode ('woo_mydownloads', 'wshk_newstyle_mydownloads');
-
-//Sustituir plantilla del tema por la del plugin
-    /*function wshk_order_downloads_get_template( $located, $template_name, $args, $template_path, $default_path ) {   
+    
+    //Sustituir plantilla del tema por la del plugin
+    
+    function wshk_downloads_get_template( $located, $template_name, $args, $template_path, $default_path ) {
+        
             
-        if ( 'order/order-downloads.php' == $template_name ) {
-            //$located = plugin_dir_path( __DIR__ ) . 'mytemplates/order-downloads.php';
-            //$located = dirname( __DIR__ ) . '/mytemplates/downloads.php';
-        }
-        
+            if ( 'myaccount/downloads.php' == $template_name ) {
+                $located = plugin_dir_path( __DIR__ ) . 'mytemplates/freedownloads.php';
+            }
+            
         return $located;
-        
     }
-    add_filter( 'wc_get_template', 'wshk_order_downloads_get_template', 10, 5 );*/
+    //Since 1.8.7
+    add_filter( 'wc_get_template', 'wshk_downloads_get_template', 10, 5 );
 }
 
 
 
-//Since v.1.6.6
+//Since v.1.6.6 - updated v.2.0.0
 
 //BILLING AND SHIPPING ADDRESSES SHORTCODE
 //Display the account edit form and let customize the data, If you want display in any page or post, use this shortcode [woo_myaddress]
@@ -171,10 +178,10 @@ if ( isset($getenablemyaddressessht) && $getenablemyaddressessht =='2001')
             
             if ( in_array( 'custom-redirections-for-wshk/custom-redirections-for-whsk.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) { 
                     
-                require ABSPATH . '/wp-content/plugins/custom-redirections-for-wshk/mytemplates/my-address.php';
+                require WP_CONTENT_DIR .'/plugins/custom-redirections-for-wshk/mytemplates/premmy-address.php';
             } else {
                 
-                require dirname( __DIR__ ) . '/mytemplates/my-address.php'; 
+                require dirname( __DIR__ ) . '/mytemplates/freemy-address.php'; 
                 }
         
             global $wp;
@@ -223,37 +230,42 @@ if ( isset($getenablemyaddressessht) && $getenablemyaddressessht =='2001')
     
     //Sustituir plantilla del tema por la del plugin
     
-    function wshk_cma_get_template( $located, $template_name, $args, $template_path, $default_path ) {   
+    function wshk_addresses_get_template( $located, $template_name, $args, $template_path, $default_path ) {
+        
+        if ( in_array( 'custom-redirections-for-wshk/custom-redirections-for-whsk.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) { 
             
-        if ( 'myaccount/form-edit-address.php' == $template_name ) {
-            $located = plugin_dir_path( __DIR__ ) . 'mytemplates/form-edit-address.php';
+            if ( 'myaccount/my-address.php' == $template_name ) {
+                $located = WP_CONTENT_DIR .'/plugins/custom-redirections-for-wshk/mytemplates/premmy-address.php';
+            }
+            
+            if ( 'myaccount/form-edit-address.php' == $template_name ) {
+                $located = WP_CONTENT_DIR .'/plugins/custom-redirections-for-wshk/mytemplates/premform-edit-address.php';
+            }
         }
+        
+        else {
+            
+            if ( 'myaccount/my-address.php' == $template_name ) {
+                $located = plugin_dir_path( __DIR__ ) . 'mytemplates/freemy-address.php';
+            }
+            
+            if ( 'myaccount/form-edit-address.php' == $template_name ) {
+                $located = plugin_dir_path( __DIR__ ) . 'mytemplates/freeform-edit-address.php';
+            }
+            
+        }
+            
+        
         return $located;
     }
     /*Since 1.8.7*/
-    add_filter( 'wc_get_template', 'wshk_cma_get_template', 10, 5 );
+    add_filter( 'wc_get_template', 'wshk_addresses_get_template', 10, 5 );
     
-    /*add_action( 'woocommerce_save_account_details_errors', 'account_validation_unique_error', 9999 ); // Details
-    add_action( 'woocommerce_after_save_address_validation', 'account_validation_unique_error', 9999 ); // Adresses
-    function account_validation_unique_error(){
-        $notices = WC()->session->get( 'wc_notices' ); // Get Woocommerce notices from session
-    
-        // if any validation errors
-        if( $notices && isset( $notices['error'] ) ) {
-    
-            // remove all of them
-            //WC()->session->__unset( 'wc_notices' );
-    
-            // Add one custom one instead
-            //wc_add_notice( __( 'Please fill in all required fields.', 'woo-shortcodes-kit' ), 'error' );
-        }
-    }*/
-    /*end*/
 }
 
 
 
-//Since v.1.6.6
+//Since v.1.6.6 - updated v.2.0.0
 
 //PAYMENT METHODS SHORTCODE
 //Display the account edit form and let customize the data, If you want display in any page or post, use this shortcode [woo_mypayment]
@@ -272,11 +284,11 @@ if ( isset($getenablemypaymentsht) && $getenablemypaymentsht =='2002')
             ob_start();
             if ( in_array( 'custom-redirections-for-wshk/custom-redirections-for-whsk.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) { 
                 
-                require ABSPATH . '/wp-content/plugins/custom-redirections-for-wshk/mytemplates/payment-methods.php';
+                require WP_CONTENT_DIR .'/plugins/custom-redirections-for-wshk/mytemplates/prempayment-methods.php';
                 
             } else {
                 
-                require dirname( __DIR__ ) . '/mytemplates/payment-methods.php';
+                require dirname( __DIR__ ) . '/mytemplates/freepayment-methods.php';
             }
             
             ?><br /><br /><br /><br /><?php
@@ -325,11 +337,44 @@ if ( isset($getenablemypaymentsht) && $getenablemypaymentsht =='2002')
         }
     }
     add_shortcode ('woo_mypayment', 'wshk_newstyle_mypayment');
+    
+    
+    //Sustituir plantilla del tema por la del plugin
+    
+    function wshk_payments_get_template( $located, $template_name, $args, $template_path, $default_path ) {
+        
+        if ( in_array( 'custom-redirections-for-wshk/custom-redirections-for-whsk.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) { 
+            
+            if ( 'myaccount/form-add-payment-method.php' == $template_name ) {
+                $located = WP_CONTENT_DIR .'/plugins/custom-redirections-for-wshk/mytemplates/premform-add-payment-method.php';
+            }
+            
+            if ( 'myaccount/payment-methods.php' == $template_name ) {
+                $located = WP_CONTENT_DIR .'/plugins/custom-redirections-for-wshk/mytemplates/prempayment-methods.php';
+            }
+        }
+        
+        else {
+            
+            if ( 'myaccount/form-add-payment-method.php' == $template_name ) {
+                $located = plugin_dir_path( __DIR__ ) . 'mytemplates/freeform-add-payment-method.php';
+            }
+            
+            if ( 'myaccount/payment-methods.php' == $template_name ) {
+                $located = plugin_dir_path( __DIR__ ) . 'mytemplates/freepayment-methods.php';
+            }
+            
+        }
+        return $located;
+    }
+    /*Since 1.8.7*/
+    add_filter( 'wc_get_template', 'wshk_payments_get_template', 10, 5 );
+    
 }
 
 
 
-//Since v.1.6.6
+//Since v.1.6.6 - updated v.2.0.0
 
 //EDIT ACCOUNT SHORTCODE
 //Display the account edit form and let customize the data, If you want display in any page or post, use this shortcode [woo_myedit_account]
@@ -344,11 +389,45 @@ if ( isset($getenablemyeditaccsht) && $getenablemyeditaccsht =='2003')
         /*wc_get_template( 'myaccount/form-edit-account.php', array( 'user' => get_user_by( 'id', get_current_user_id() ) ) ); */
         if (  is_user_logged_in() && ( is_account_page() ) ) {
             ob_start();
-            require dirname( __DIR__ ) . '/mytemplates/form-edit-account.php';
+            
+            if ( in_array( 'custom-redirections-for-wshk/custom-redirections-for-whsk.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) { 
+                
+                require WP_CONTENT_DIR .'/plugins/custom-redirections-for-wshk/mytemplates/premform-edit-account.php';
+                
+            } else {
+            
+            require dirname( __DIR__ ) . '/mytemplates/freeform-edit-account.php';
+            
+            }
+            
             return ob_get_clean();
         }
     }
     add_shortcode ('woo_myedit_account', 'wshk_newstyle_myeditaccount');
+    
+    //Sustituir plantilla del tema por la del plugin
+    
+    function wshk_editaccount_get_template( $located, $template_name, $args, $template_path, $default_path ) {
+        
+        if ( in_array( 'custom-redirections-for-wshk/custom-redirections-for-whsk.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+            
+            if ( 'myaccount/form-edit-account.php' == $template_name ) {
+                $located = WP_CONTENT_DIR .'/plugins/custom-redirections-for-wshk/mytemplates/premform-edit-account.php';
+            }
+            
+        } else {
+            
+            if ( 'myaccount/form-edit-account.php' == $template_name ) {
+            $located = plugin_dir_path( __DIR__ ) . 'mytemplates/freeform-edit-account.php';
+            }
+            
+        }
+        
+        return $located;
+    }
+    /*Since 1.8.7*/
+    add_filter( 'wc_get_template', 'wshk_editaccount_get_template', 10, 5 );
+    
 }
 
 
@@ -471,7 +550,7 @@ if ( isset($getenableusername) && $getenableusername =='11')
 
 
 
-//Since v.1.5 - updated v.1.9.1
+//Since v.1.5 - updated v.1.9.1 - updated v.2.0.0
 
 //LOGOUT BUTTON SHORTCODE
 //If you are building your own myaccount page, you will need this function to let the user make a logout. Just need activate and use this shortcode: [woo_logout_button]
@@ -497,7 +576,7 @@ if ( isset($getenablelogoutbtn) && $getenablelogoutbtn =='12')
         //the get page id myaccount can be changed for shop to redirect after logout to the shop page
         
         ob_start();
-        print '<a class="woocommerce-Button button wshkclose" style="border:' . ' ' . $logbtnbdsize . 'px' . ' ' . $logbtnbdtype . ' ' . $logbtnbdcolor . '; border-radius:' . ' ' . $logbtnbdradius . 'px; text-decoration:' . ' ' . $logbtntd . '; margin: 0 auto;  text-align:' . ' ' . $logbtnta . '; display:block; width:' . ' ' . $logbtnwd . 'px;" href="' . wp_logout_url( get_permalink( wc_get_page_id( "myaccount" ) ) ) . '">' . ' ' . $logbtntext . ' ' . '</a>';
+        print '<a class="woocommerce-Button button wshkclose" style="border:' . ' ' . $logbtnbdsize . 'px' . ' ' . $logbtnbdtype . ' ' . $logbtnbdcolor . '; border-radius:' . ' ' . $logbtnbdradius . 'px; text-decoration:' . ' ' . $logbtntd . '; margin: 0 auto;  text-align:' . ' ' . $logbtnta . '; display:block; width:' . ' ' . $logbtnwd . 'px;" href="' . wc_logout_url( get_permalink( wc_get_page_id( "myaccount" ) ) ) . '">' . ' ' . $logbtntext . ' ' . '</a>';
         
         return ob_get_clean();
         
@@ -614,13 +693,6 @@ if ( isset($getenableloginform) && $getenableloginform =='13')
     add_filter( 'woocommerce_login_redirect', 'wshk_custom_user_redirect', 99, 99 );
 }
 
-
-/*function lapruebanueva(){
-$tegoprueba = get_option('wshk_enablepreviousvisited');
-return 'PRUEBA AQUI '.$tegoprueba;
-    
-}
-add_shortcode('lapruebashortcode', 'lapruebanueva');*/
 
 
 //Since v.1.5 - Updated in v.1.8.0 - v.1.9.1
@@ -1004,5 +1076,42 @@ if ( isset($getenabletheuseremailsht) && $getenabletheuseremailsht =='2007')
         return $theeuser->user_email;
     }
     add_shortcode( 'woo_display_email' , 'wshk_displayemail_on_menu' );
+}
+
+
+//Since v.2.0.0
+
+//USER ROLE SHORTCODE
+// If you want so shot the user role or roles, just use this shortcode      [wshk-user-role] and configure the settings
+
+$getenabletheuserrolesht = get_option('wshk_enableuserrole');
+if ( isset($getenabletheuserrolesht) && $getenabletheuserrolesht =='050222')
+    {
+
+function wshk_display_user_role(){
+	
+$current_user = wp_get_current_user();
+    $roles = $current_user->roles;
+	$allroles = get_option('wshk_userroleoptions');
+	$roleslist = 1;	
+	
+	//Show all user roles in a list, you can add custom styles to the global list and to each list item
+	if($allroles == 1) {
+		ob_start();
+		echo '<ul class="wshk-roles-list">';
+		foreach($roles as $role) {			
+			echo '<li class="wshk-role-'.$roleslist++.'">' . $role . '</li>';
+		}
+		echo '</ul>';
+		return ob_get_clean();
+	}
+	else {
+	//Show main role, can be integrated into a line of text as well
+		ob_start();    
+		echo $roles[0];	
+		return ob_get_clean();
+	}
+}
+add_shortcode('wshk-user-role','wshk_display_user_role');
 }
 ?>

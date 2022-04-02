@@ -261,7 +261,7 @@ if ( isset($getenablectbp) && $getenablectbp =='6')
             echo '<p id="custopurchprod" class="wshkcounters" style="text-align:' . $aligntheproducts .';">'.$count.'</p>';
             
             
-            include( ABSPATH . '/wp-content/plugins/custom-redirections-for-wshk/js/animated-counter.php' );
+            include( WP_CONTENT_DIR .'/plugins/custom-redirections-for-wshk/js/animated-counter.php' );
             
         } else {
         
@@ -425,7 +425,7 @@ if ( isset($getenablectbo) && $getenablectbo =='7')
             echo '<p id="custototords" class="wshkcounters" style="text-align:' . $aligntheorders .';">'.$count.'</p>';
             
             
-            include( ABSPATH . '/wp-content/plugins/custom-redirections-for-wshk/js/animated-counter-ord.php' );
+            include( WP_CONTENT_DIR .'/plugins/custom-redirections-for-wshk/js/animated-counter-ord.php' );
             
         } else {
         
@@ -516,7 +516,7 @@ add_shortcode( 'woo_total_count_reviews', 'wshk_count_reviews_by_user' );
             echo '<p id="custoprorev" class="wshkcounters" style="text-align:' . $alignthereviews .';">'.$comments.'</p>';
             
             
-            require( ABSPATH . '/wp-content/plugins/custom-redirections-for-wshk/js/animated-counter-rev.php' );
+            require( WP_CONTENT_DIR .'/plugins/custom-redirections-for-wshk/js/animated-counter-rev.php' );
             
         } else {
         

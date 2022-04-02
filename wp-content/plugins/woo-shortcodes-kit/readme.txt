@@ -3,13 +3,13 @@ Contributors: disespubli,
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=LAU9U6B795VV8
 Tags: woo, woocommerce, my-account, Products per page, woo shortcodes.
 Requires at least: 5.2
-Tested up to: 5.7
-Stable tag: 1.9.9
+Tested up to: 5.9
+Stable tag: 2.0.1
 License: GPLv3
 Requires PHP: 5.6
 URI: http://www.gnu.org/licenses/gpl-3.0.html
 WC requires at least: 4.0
-WC tested up to: 5.3
+WC tested up to: 6.3
 
 
 == Description ==
@@ -18,16 +18,17 @@ Customize your WooCommerce store with more than 60 functions and shortcodes, ran
 
 "Woo Shortcodes Kit" does not work alone. It is originally created for [WooCommerce](https://wordpress.org/plugins/woocommerce/), so before install "Woo Shortcodes Kit" you must have need to install WooCommerce on your website.
 
-**Tested & Running with WorPress v.5.7.2 | WooCommerce v.5.3.0 (30/05/21)
+**Tested & Running with WorPress v.5.9.2 | WooCommerce v.6.3.1 (26/03/22)
 
 
 == Translation ==
 
 * English - default, .pot file included. 
 * Spanish - translation file 100% ready to use.
-* Brazilian/Portuguese - translation file 100% ready to use.
+
 
 = Feedback =
+
 * Follow now on Instagram: [Visit now!](https://www.instagram.com/disespubli/)
 * Contact or send your ideas from twitter! [@Disespubli](https://twitter.com/Disespubli)
 * Follow all the news on the official Fanpage:  [Visit now!](https://www.facebook.com/disespubli/)
@@ -68,16 +69,17 @@ However, if you install this manually, follow these steps:
 
 == Frequently Asked Questions ==
 
+
 = How to start with "Woo Shortcodes Kit"? =
 
 Starting to use Woo Shortcodes Kit is as simple as going to the backend of your website, search the WooCommerce tab in the admin menu and the WSHK link will appear in the drop-down. Click on it to access the plugin.
 
-
 The content of this plugin is presented in different tabs:
+
 
 SETTINGS
 
-On this tab you will find the functions and shortcodes of the plugin. All the configuration part is done from this tab.
+In this tab you will find the functions and shortcodes of the plugin. All the configuration part is done from this tab.
 
 In turn, the functions and shortcodes are organized by sections to make it more convenient to locate them. If you click on a section, the functions inside it will be displayed.
 
@@ -86,55 +88,35 @@ Each function shows a slide button to activate or deactivate it. From the moment
 To achieve this, you just have to click on the function and its advanced options will be displayed. You just have to follow the established steps and indications and once finished save the settings so that everything is correctly applied.
 
 
-CONTACT
-
-In this tab you have a panel with different links of great relevance in WSHK.
-You can request support with just one click, see the report of changes and documentation of the plugin.
-
-You can also keep up to date with all the news that happens in WSHK.
-
-
-LANGUAGES
-
-From this tab you can adapt the language of the plugin.
-
-Naturally the plugin is developed in English, but additionally it has prepared the language files to translate the plugin into Spanish and Portuguese (Brazilian).
-
-If by default the plugin stays in English and you want to translate it to one of the available languages, you just have to click on the Copy button of the desired language.
-After copying, go back to WSHK to refresh the changes.
-
-If in a new version the plugin undergoes an update in the language files and has not been applied correctly in your installation, you can click on the Update button of the desired language. After the update, go back to WSHK to refresh the changes.
-
-
-NOTIFICATIONS
-
-This tab is shown again in the plugin.
+NEWS
 
 It is here to stay and it will be your new inbox, from which you can have direct access with just one click to outstanding news about WSHK, its complements and some more surprise.
 
 In each version it will be updated, so it is totally advisable to follow it closely so as not to miss anything!
 
 
+RECOMMENDED
+
+In this tab you can know the plugins recommended by WSHK and access directly to each recommendation with just one click.
+Also if you are interested, you can [contact to promote your plugins on this tab](https://disespubli.com/contact/).
+
+
+CONTACT
+
+In this tab you have a panel with different links of great relevance in WSHK.
+You can request support with just one click, see the report of changes and documentation of the plugin.
+
+
 = How work each function ? =
 
-Now you can follow all the new tutorials from the official WSHK blog, you can subscribe for free and receive them in your email.
-
-You have 3 new playlists on YouTube:
-
-[Modding WooCommerce with WSHK](http://bit.ly/WCModding)
-
-[Learn how work each function in WSHK](https://www.youtube.com/playlist?list=PLAI7D4M9MLQA1gcsDKfvuO4N_RfkywlJl)
-
-[Enhance your shop with WSHK addons!](http://bit.ly/addonsWSHK)
-
-**[Subscribe](https://www.youtube.com/channel/UClJ1xH2R56z3jnkAKrucxJQ) to not miss anything!**
+All the functions have the "How does it work?" button to learn about how work, so with just one click you will get access to the [documentation](https://disespubli.com/docs/) about each function.
 
 
 = How can i translate Woo Shortcodes Kit? =
 
-WSHK is internazionalized, have an english template and the ready Spanish and Portuguese (Brazilian) translation.
+WSHK is internazionalized, have an english template and the ready Spanish translation.
 
-By default the plugin take your site language how reference, so dont need nothing to get the plugin if your language is English, Spanish or Portuguese (Brazilian).
+By default the plugin take your site language how reference, so dont need nothing to get the plugin if your language is English or Spanish.
 
 If you need translate to other languages, you can do it by yourself, just need make click in the developement section and do click in [Translate "Woo Shortcodes Kit" into your language](https://translate.wordpress.org/projects/wp-plugins/woo-shortcodes-kit) or use [Loco Translate](https://es.wordpress.org/plugins/loco-translate/) to write your own language from the English template.
 
@@ -143,7 +125,7 @@ If you need translate to other languages, you can do it by yourself, just need m
 
 This plugin has been tested with templates such as Storefront, Hello theme by Elementor, GeneratePress, The7 and Betheme. But in no case is absolute compatibility ensured.
 
-It has also been tested with page builders such as Elementor, Divi, Visual Composer + Ultimate addons for VC. But neither is absolute compatibility guaranteed.
+It has also been tested with page builders such as Elementor, Divi, Gutenberg, Visual Composer + Ultimate addons for VC. But neither is absolute compatibility guaranteed.
 
 Each project is different, not all are complemented by the same plugins, so it becomes quite complex to ensure it.
 
@@ -176,57 +158,46 @@ You can also get information and keep up to date with everything that happens at
 10. screenshot-10.jpg
 11. screenshot-11.jpg
 12. screenshot-12.jpg
-13. screenshot-13.jpg
-14. screenshot-14.jpg
 
 
 == Changelog ==
 
-= 1.9.9 =
- *Changelog (30/05/21)
- 
+= 2.0.1 =
+ *Changelog (26/03/22)
 
-NEW
+
+FIXED
 -----------
 
-+ Shortcode to display the billing data separately, now you can display the customer billing Street (second line)
++ Fixed text string in form-login template, now it is automatically translated with the same WooCommerce translation.
 
-+ Shortcode to display the billing data separately, now you can display the customer billing Country (code)
++ Fixed the way WSHK PRO and EMAB files are called.
 
-+ Shortcode to display the billing data separately, now you can display the customer billing Country (name)
++ Fixed the function Display WooCommerce notices.
 
-+ Shortcode to display the billing data separately, now you can display the customer billing Stare/Province (code)
-
-+ Shortcode to display the billing data separately, now you can display the customer billing Stare/Province (name)
-
-+ Shortcode to display the shipping data separately, now you can display the customer shipping Street (second line)
-
-+ Shortcode to display the shipping data separately, now you can display the customer shipping Country (code)
-
-+ Shortcode to display the shipping data separately, now you can display the customer shipping Country (name)
-
-+ Shortcode to display the shipping data separately, now you can display the customer shipping Stare/Province (code)
-
-+ Shortcode to display the shipping data separately, now you can display the customer shipping Stare/Province (name)
++ Fixed the way integrations with WSHK PRO are called.
 
 
 UPDATED
 -----------
 
-+ Spanish language template
-+ Brazilian/Portuguese language template
++ View-order template.
+
++ English template
+
++ Spanish translation
 
 
 COMPATIBILITY TEST
 --------------------
 
-+ Compatible with Easy My Account Builder 1.0.8
++ Compatible with WordPress 5.9.2
 
-+ Compatible with WSHK PRO (old Custom Blocks & Redirections) v 1.1.6
++ Compatible with WooCommerce 6.3.1
 
-+ Compatible with WordPress 5.7.2
++ Compatible with Woo Shortcodes Kit PRO 1.1.8
 
-+ Compatible with WooCommerce 5.3.0
++ Compatible with Easy My Account Builder 1.0.9
 
 + Compatible with Php 7.4
 
@@ -235,7 +206,7 @@ COMPATIBILITY TEST
 
 == Upgrade Notice ==
 
-= 1.9.9 =
- *Changelog (30/05/21)
+= 2.0.1 =
+ *Changelog (26/03/22)
 
  PLEASE READ ALWAYS THE CHANGELOG BEFORE UPDATE.

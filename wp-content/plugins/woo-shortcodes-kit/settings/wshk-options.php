@@ -50,6 +50,8 @@ if(!function_exists('wshk_register_settings')):
     	register_setting('wshk_options', 'wshk_gdpr_reviews_link_text');
     	register_setting('wshk_options', 'wshk_gdpr_regform_link_text');
     	
+    	/*v.2.0.0*/
+    	register_setting('wshk_options', 'wshk_disableorderstemplate');
     	
     	
     	
@@ -145,6 +147,10 @@ if(!function_exists('wshk_register_settings')):
     	register_setting( 'wshk_options', 'wshk_get_terms_hide');
     	register_setting( 'wshk_options', 'wshk_get_pol_hide');
     	register_setting( 'wshk_options', 'wshk_enablepropurchtimes' );
+    	
+    	/*Since 2.0.0*/
+    	register_setting( 'wshk_options', 'wshk_enableuserrole' );
+    	register_setting( 'wshk_options', 'wshk_userroleoptions' );
     	
     	
     	register_setting( 'wshk_options', 'wshk_yesenable');

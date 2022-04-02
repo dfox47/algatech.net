@@ -149,7 +149,7 @@ Show only products from specific categories on the shop page
         <br />
         </table>
         <br><br>
-        <p><strong>2.- <?php esc_html_e( 'Display options', 'woo-shortcodes-kit' ); ?></strong><br><small><?php esc_html_e( 'By default this function will work on the shop page and in the products search form. So if you choose to show 3 categories only those will be shown, but now you can decide if you want to limit the function to work only on the shop page and allow the search for product from other categories in the product search form.', 'woo-shortcodes-kit' ); ?></small></p><br>
+        <p><b>2.- <?php esc_html_e( 'Display options', 'woo-shortcodes-kit' ); ?></b><br><small><?php esc_html_e( 'By default this function will work on the shop page and in the products search form. So if you choose to show 3 categories only those will be shown, but now you can decide if you want to limit the function to work only on the shop page and allow the search for product from other categories in the product search form.', 'woo-shortcodes-kit' ); ?></small></p><br>
     
     <p class="wshkfunctinputs"><input type="checkbox" id="wshk_display_cats_search" name="wshk_display_cats_search" value='catsearchopt' <?php if(get_option('wshk_display_cats_search')!=''){ echo ' checked="checked"'; }?> /><label for="wshk_display_cats_search"><?php esc_html_e( 'Allow the search for products from other categories in the product search form.', 'woo-shortcodes-kit' ); ?></label></p>
     

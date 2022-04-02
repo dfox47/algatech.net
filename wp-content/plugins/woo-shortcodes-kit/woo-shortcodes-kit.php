@@ -3,12 +3,12 @@
 /**
 * Plugin Name: Woo Shortcodes Kit
 * Plugin URI: https://disespubli.com/
-* Description: Enhance your WooCommerce shop with +60 shortcodes and functions very easy to use! Build your custom account page, customize the shop page or build a new one from scratch, add shortcodes in your menu and get a dynamic menu, add counters with the customer or shop data, modify the "add to cart" button, adapt your shop to the GDPR law, add security in your shop, restrict content and much more!. This plugin not work alone, you need install WooCommerce before.
+* Description: Customize your WooCommerce store with more than 60 functions and shortcodes, ranging from the important points of your store such as: Access, My account page, shop page, thank you pages among others, to additional content to reinforce: as content restriction, adaptation to the new law of data protection, security, advanced user data, messages according to the number of orders among many more advantages. This plugin not work alone, you need install WooCommerce before.
 * Author: Alberto G.
-* Version: 1.9.9
-* Tested up to: 5.7
+* Version: 2.0.1
+* Tested up to: 5.9
 * WC requires at least: 4.0
-* WC tested up to: 5.3
+* WC tested up to: 6.3
 * Author URI: https://disespubli.com/
 * Text Domain: woo-shortcodes-kit
 * Domain Path: /languages
@@ -102,21 +102,33 @@
 	//if(!function_exists('init_woo_shortcodes_kit_admin_page_html')):
     if(!function_exists('init_woo_shortcodes_kit_admin_page_html')){
 	function init_woo_shortcodes_kit_admin_page_html() {
+	    
    
     // Settings page style
-    require plugin_dir_path( __FILE__ ).'settings/wshk-settings-page.php';
     
+    require plugin_dir_path( __FILE__ ).'settings/wshk-settings-page.php';
+    $wshk_pl = plugins_url();
     ?>
 
     <!-- HTML START -->
 
     <!-- page -->
-    <div style="width: 90%;max-width:1920px; padding: 10px; margin: 10px;height:auto;">
+    
+    <div class="wshkpagebg">
+        
  
     <!-- Header -->
-     <div class="wshkheadertitle" style="width: 100%;background-color: #a46497; border: 1px solid #a46497; border-radius: 13px; padding: 20px;"><h1 class="wshkplutitle"><span style="color: white;">Woo Shortcodes Kit v 1.9.<small>9</small></span><span class="wshkquerys" style="font-size: 12px; color: #c6adc2; float: right;margin-top: 35px;"><?php  echo get_num_queries(); ?> <?php esc_html_e( 'Queries in', 'woo-shortcodes-kit' ); ?> <?php timer_stop(1); ?>  <?php esc_html_e( 'seconds', 'woo-shortcodes-kit' ); ?>
-     </span></h1>
-     </div>
+    
+    <div class="wshkheadertitle" style="width: 100%;background-color: #321A51; border: 1px solid #321A51; border-radius: 13px; padding: 20px;">
+		
+		<img class="wshkheadlogo" src="<?php echo $wshk_pl.'/woo-shortcodes-kit/images/new-wshk-2-dark-128.png'; ?>" />
+         
+        <h1 class="wshkplutitle"><span style="color: white;">Woo Shortcodes Kit <small>v.2.0.1</small></span></h1>
+         
+        <span class="wshkquerys"><?php  echo get_num_queries(); ?> <?php esc_html_e( 'Queries in', 'woo-shortcodes-kit' ); ?> <?php timer_stop(1); ?>  <?php esc_html_e( 'seconds', 'woo-shortcodes-kit' ); ?></span>
+        
+    </div>
+    
  
     <!-- Start Options Form -->
  
@@ -126,23 +138,20 @@
  
     <!-- Navigation tabs -->
  
-    <div id="wshk-tab-menu" style="width:90%;">
+    <div id="wshk-tab-menu" style="width:100%;font-weight: 700;font-family: 'Roboto';">
      
-     <a id="wshk-general" style="border: 1px solid white; border-radius: 13px; height: 95px;padding-top: 20px;padding-bottom: 10px; text-align: center;width: 85px;text-transform: uppercase;letter-spacing: 1px;" class="wshk-tab-links active" ><img src="<?php echo  plugins_url( 'images/newsett.png
-' , __FILE__ );?> " style="width: 48px; height: 48px; padding-bottom: 15px;"><span style="text-align: center;"><br /><?php esc_html_e( 'Settings', 'woo-shortcodes-kit' ); ?></span></a>
+     <a id="wshk-general" class="wshk-tab-links active" ><img src="<?php echo  plugins_url( 'images/newsett.png' , __FILE__ );?> " style="width: 48px; height: 48px; padding-bottom: 15px;"><span style="text-align: center;"><br /><?php esc_html_e( 'Settings', 'woo-shortcodes-kit' ); ?></span></a>
      
      
-     <a  id="wshk-news" style="border: 1px solid white; border-radius: 13px; height: 95px;padding-top: 20px;padding-bottom: 10px; text-align: center;width: 85px;text-transform: uppercase;letter-spacing: 1px;"  class="wshk-tab-links"><img src="<?php echo  plugins_url( 'images/notification.png' , __FILE__ );?>" style="width: 48px; height: 48px;padding-bottom: 15px;" ;><br /><span style="margin-left: -5px;"><?php esc_html_e( 'News', 'woo-shortcodes-kit' ); ?></span></a>
+     <a  id="wshk-news" class="wshk-tab-links"><img src="<?php echo  plugins_url( 'images/notification2.png' , __FILE__ );?>" style="width: 48px; height: 48px;padding-bottom: 15px;" ;><br /><span style="margin-left: -5px;"><?php esc_html_e( 'News', 'woo-shortcodes-kit' ); ?></span></a>
      
 
-     <a  id="wshk-languages" style="border: 1px solid white; border-radius: 13px; height: 95px;padding-top: 20px;padding-bottom: 10px; text-align: center;width: auto;text-transform: uppercase;letter-spacing: 1px;" class="wshk-tab-links"><img src="<?php echo  plugins_url( 'images/languageswshk.png
-' , __FILE__ );?>" style="width: 48px; height: 48px;padding-bottom: 15px;"><span style="text-align: center;"><br /><?php esc_html_e( 'Languages', 'woo-shortcodes-kit' ); ?></span></a>
+     <!--<a  id="wshk-languages" class="wshk-tab-links"><img src="<?php echo  plugins_url( 'images/languageswshk.png' , __FILE__ );?>" style="width: 48px; height: 48px;padding-bottom: 15px;"><span style="text-align: center;"><br /><?php esc_html_e( 'Languages', 'woo-shortcodes-kit' ); ?></span></a>-->
      
      
-     <a  id="wshk-recom" style="border: 1px solid white; border-radius: 13px; height: 95px;padding-top: 20px;padding-bottom: 10px; text-align: center;width: 85px;text-transform: uppercase;letter-spacing: 1px;"  class="wshk-tab-links"><img src="<?php echo  plugins_url( 'images/recomend.png' , __FILE__ );?>" style="width: 48px; height: 48px;padding-bottom: 15px;" ;><br /><span style="margin-left: -22px;"><?php esc_html_e( 'Recommended', 'woo-shortcodes-kit' ); ?></span></a>
+     <a  id="wshk-recom" class="wshk-tab-links"><img src="<?php echo  plugins_url( 'images/recomend.png' , __FILE__ );?>" style="width: 48px; height: 48px;padding-bottom: 15px;" ;><br /><span style="margin-left: -20px;"><?php esc_html_e( 'Recommended', 'woo-shortcodes-kit' ); ?></span></a>
      
-     <a  id="wshk-contact" style="border: 1px solid white; border-radius: 13px; height: 95px;padding-top: 20px;padding-bottom: 10px; text-align: center;width: 85px;text-transform: uppercase;letter-spacing: 1px;" class="wshk-tab-links"><img src="<?php echo  plugins_url( 'images/newcont.png
-' , __FILE__ );?>" style="width: 48px; height: 48px;padding-bottom: 15px;"><span style="text-align: center;"><br /><?php esc_html_e( 'Contact', 'woo-shortcodes-kit' ); ?></span></a>
+     <a  id="wshk-contact" class="wshk-tab-links"><img src="<?php echo  plugins_url( 'images/newcont.png' , __FILE__ );?>" style="width: 48px; height: 48px;padding-bottom: 15px;"><span style="text-align: center;"><br /><?php esc_html_e( 'Contact', 'woo-shortcodes-kit' ); ?></span></a>
 
     </div>
  
@@ -160,313 +169,327 @@
         
     <!-- White box start -->
     
-    <div style="background-color: white; /*width: 100%;*/ padding: 20px 20px 20px 20px;border: 1px solid white; border-radius: 13px;">
+    <div class="wshkpagewhitebg">
+        
         
     <!-- Settings info box -->
         
-    <div style="padding-left: 10px;padding: 20px; color: #a46497;border: 1px solid #a46497; border-radius: 13px;">
-             
-    <!-- Info box content -->
+    <div class="wshkinfoboxes">
     
-    <table width="100%">
-        <tr>
-            <td style="width:90%">
-                <h2 class="wshkinfoboxtitle"><span style="color:#a46497; font-size: 26px;"><span class="dashicons dashicons-info"></span> <?php esc_html_e( 'Functions and Shortcodes', 'woo-shortcodes-kit' ); ?></span>
-                </h2>
-            </td>
-            <td>
-                <!--<a href="#" target="_blank" style="background-color:#a46497;padding:15px;border-radius:13px;" ><span style="font-size:26px;color:#ffffff;" class="dashicons dashicons-book"> </span> </a>-->
-            </td>
-        </tr>
-    </table>         
+        <h2 class="wshkinfoboxtitle">
+            <span class="dashicons dashicons-info"></span> <?php esc_html_e( 'Functions and Shortcodes', 'woo-shortcodes-kit' ); ?>
+        </h2>        
     
-    <h4 class="wshkinfoboxdesc"><small><span style="color: #808080; font-size: 15px;padding-left: 30px;"><?php esc_html_e( 'Just need make a click in each section to view the functions and shortcodes.', 'woo-shortcodes-kit' ); ?></span></small><br /><small><span style="color: #808080; font-size: 15px;padding-left: 30px;"><?php esc_html_e( 'Enable & configure the functions.', 'woo-shortcodes-kit' ); ?></span></small><small><span style="color: #ccc; font-size: 13px;font-style: italic;"> <?php esc_html_e( '(Some functions use a shortcode to be displayed in the Frontend)', 'woo-shortcodes-kit' ); ?></span></small>
-    </h4>
+        <p class="wshkinfoboxdesc">
+            
+            <span><?php esc_html_e( 'Just need make a click in each section to view the functions and shortcodes.', 'woo-shortcodes-kit' ); ?>
+            </span>
+            <br />
+            
+            <span><?php esc_html_e( 'Enable & configure the functions.', 'woo-shortcodes-kit' ); ?>
+            </span>
+            
+            <span style="color: #969696; font-size: 13px;font-style: italic;"> <?php esc_html_e( '(Some functions use a shortcode to be displayed in the Frontend)', 'woo-shortcodes-kit' ); ?>
+            </span>
+            
+        </p>
+    
+    </div>
     
     <!-- END Settings info box-->
     
-    </div>
-
 
     <!-- Sections accordions -->
     
     <div class="pcontainer">
     <ul class="acc">
-      
-    <!-- NOTE: Each li how a section -->
     
     
-    
-    
-    <!-- Section one - DYNAMIC NAVIGATION MENU -->
+    <!-- Section one - ACCOUNT PAGE -->
     <li>
       
-      <div class="acc_ctrl" style="background-color: #fbfbfb; padding: 10px;"><h3 style="margin-top: 25px;padding-left:20px;color:#a46497;letter-spacing: 1px; font-size: 20px;"><span class="dashicons dashicons-menu"></span> <?php esc_html_e( 'DYNAMIC NAVIGATION MENU', 'woo-shortcodes-kit' ); ?></h3></div>
+        <div class="acc_ctrl">
+            <h3 class="wshksettitles">
+              <span class="dashicons dashicons-buddicons-buddypress-logo"></span> <?php esc_html_e( 'ACCOUNT PAGE', 'woo-shortcodes-kit' ); ?>
+            </h3>
+            <p class="wshksettext"><?php esc_html_e( 'Find in this section all the shortcodes and functions related to build your custom account page from scratch', 'woo-shortcodes-kit' ); ?>
+            </p>
+        </div>
       
-      <!-- Section one - Content -->
+        <!-- Section one - Content -->
       
-      <div class="acc_panel">
-          <br /><br />
+        <div class="acc_panel">
+            <br /><br />
           
-
-        <!-- Conditional menu -->
-        <?php require plugin_dir_path( __FILE__ ).'settings/dynamic-navigation-menu/conditional-menu-setting.php'; ?>
-        
-        <!-- Shortcodes in menu titles -->
-        <?php require plugin_dir_path( __FILE__ ).'settings/dynamic-navigation-menu/shortcodes-in-menu-titles-setting.php'; ?>
-        
-        <!-- Username in menu title -->
-        <?php require plugin_dir_path( __FILE__ ).'settings/dynamic-navigation-menu/username-in-menu-title-setting.php'; ?>
-  
-      </div>
-    </li>
-    <!-- END Section one - DYNAMIC NAVIGATION MENU -->  
-    
-    
-  
-  
-  
-    <!-- Section two - CUSTOMIZE THE SHOP PAGE OR BUILD A NEW -->
-    <li>
-      
-      <div class="acc_ctrl" style="background-color: #fbfbfb; padding: 10px;"><h3 style="margin-top: 25px;padding-left:20px;color:#a46497;letter-spacing: 1px; font-size: 20px;"><span class="dashicons dashicons-store"></span> <?php esc_html_e( 'CUSTOMIZE THE SHOP PAGE OR BUILD A NEW', 'woo-shortcodes-kit' ); ?></h3></div>
-      
-      <!-- Section two - Content -->
-      
-      <div class="acc_panel">
-          <br /><br />
-          
-          
-        <!-- Display only products of specifics categories -->
-        <?php require plugin_dir_path( __FILE__ ).'settings/customize-the-shop-page/show-only-products-from-specific-cat-setting.php'; ?>
-          
-        <!-- Exclude products of specifics categories -->
-        <?php require plugin_dir_path( __FILE__ ).'settings/customize-the-shop-page/exclude-products-from-specific-cat-setting.php'; ?>
-        
-        <!-- products per page manager -->
-        <?php require plugin_dir_path( __FILE__ ).'settings/customize-the-shop-page/products-per-page-manager-setting.php'; ?>
-        
-        <!-- Conditional add to cart button for purchased products -->
-        <?php require plugin_dir_path( __FILE__ ).'settings/customize-the-shop-page/conditional-add-to-cart-button.php'; ?>
-        
-        <!-- customize add to cart button by product type -->
-        <?php require plugin_dir_path( __FILE__ ).'settings/customize-the-shop-page/change-add-to-cart-button-text-setting.php'; ?>
-        
-        <!-- Build a new shop page from scratch -->
-        <?php require plugin_dir_path( __FILE__ ).'settings/customize-the-shop-page/build-a-new-shop-page-setting.php'; ?>
-        
+            <!-- Orders list shortcode -->
+            <?php require plugin_dir_path( __FILE__ ).'settings/build-your-account-page/orders-list-sht-setting.php'; ?>
+               
+            <!-- Downloads list shortcode -->
+            <?php require plugin_dir_path( __FILE__ ).'settings/build-your-account-page/downloads-list-sht-setting.php'; ?>
+               
+            <!-- Billing and shipping addresses shortcode -->
+            <?php require plugin_dir_path( __FILE__ ).'settings/build-your-account-page/billing-and-shipping-addresses-sht-setting.php'; ?>
+               
+            <!-- Payment methods shortcode -->
+            <?php require plugin_dir_path( __FILE__ ).'settings/build-your-account-page/payment-methods-sht-setting.php'; ?>
+               
+            <!-- Edit account shortcode -->
+            <?php require plugin_dir_path( __FILE__ ).'settings/build-your-account-page/edit-account-sht-setting.php'; ?>
+           
+            <!-- dashboard shortcode -->
+            <?php //require plugin_dir_path( __FILE__ ).'settings/build-your-account-page/dashboard-sht-setting.php'; ?>
+           
+            <!-- Customer reviews shortcode -->
+            <?php require plugin_dir_path( __FILE__ ).'settings/build-your-account-page/customer-reviews-sht-setting.php'; ?>
+           
+            <!-- Display WooCommerce notices -->
+            <?php require plugin_dir_path( __FILE__ ).'settings/build-your-account-page/display-wc-notices-setting.php'; ?>
+           
+            <!-- Logout button with a shortcode-->
+            <?php require plugin_dir_path( __FILE__ ).'settings/build-your-account-page/logout-button-sht-setting.php'; ?>
+           
+            <!-- Login form shortcode -->
+            <?php require plugin_dir_path( __FILE__ ).'settings/build-your-account-page/login-form-sht-setting.php'; ?>
+           
+            <!-- HIDE LOGIN ERROR MESSAGE -->
+            <?php require plugin_dir_path( __FILE__ ).'settings/build-your-account-page/hide-login-errors-setting.php'; ?>
+           
         </div>
     </li>
-    <!--END section two - CUSTOMIZE THE SHOP PAGE OR BUILD A NEW -->
+    <!-- END Section one - ACCOUNT PAGE -->
     
     
-    
-    
-     <!-- Section three - BUILD YOUR CUSTOM ACCOUNT PAGE -->
+    <!-- Section two - USER DATA -->
     <li>
       
-      <div class="acc_ctrl" style="background-color: #fbfbfb; padding: 10px;"><h3 style="margin-top: 25px;padding-left:20px;color:#a46497;letter-spacing: 1px; font-size: 20px;"><span class="dashicons dashicons-buddicons-buddypress-logo"></span> <?php esc_html_e( 'BUILD YOUR CUSTOM ACCOUNT PAGE', 'woo-shortcodes-kit' ); ?></h3></div>
+        <div class="acc_ctrl">
+            <h3 class="wshksettitles">
+                <span class="dashicons dashicons-admin-users"></span> <?php esc_html_e( 'USER DATA', 'woo-shortcodes-kit' ); ?>
+            </h3>
+            <p class="wshksettext"><?php esc_html_e( 'Find in this section all the shortcodes and functions related to display data about the user', 'woo-shortcodes-kit' ); ?>
+            </p>
+        </div>
       
-      <!-- Section three - Content -->
+        <!-- Section two - Content -->
       
-      <div class="acc_panel">
-          <br /><br />
-          
-          <!--<div style="background-color:#f4f1ff;font-size:16px;padding:40px 20px 40px 20px;border:0px solid #a46497;border-radius:3px;color: #a46497;">
-              <table width="100%" style="line-height:24px;">
-                 <tr>
-                     <td>
-                         <span class="dashicons dashicons-info"></span> <span><strong><?php esc_html_e( 'Now 15% OFF for WSHK users', 'woo-shortcodes-kit' ); ?></strong> <?php esc_html_e( 'on Woo Shortcodes Kit PRO or Easy My Account Builder!', 'woo-shortcodes-kit' ); ?><br> <?php esc_html_e( 'Use the Coupon code:', 'woo-shortcodes-kit' ); ?> <span style="font-weight:bolder;font-size:18px;">1MWSHKUS3R15</span><br><small><?php esc_html_e( 'Expire with the next WSHK v.1.9.1 and will be only available for the 25 first users!', 'woo-shortcodes-kit' ); ?></small></span> 
-                     </td>
-                     <td style="padding:20px 0px 0px 20px;">
-                          <a href="https://disespubli.com/meet-the-addons/" target="_blank" style="text-align: center; width: 110px; border: 1px solid #a46497; border-radius: 13px; background-color: #a46497; font-size: 17px; font-weight: bolder; color: white; padding: 15px;display:block;float:right;margin-top:-16px;"><span  style="color:white;"><?php esc_html_e( 'GET ADDONS', 'woo-shortcodes-kit' ); ?></span></a>
-                     </td>
-                 </tr> 
-              </table>
-              </div>
-          <br><br>-->
-          
-          
-          
-           <!-- Orders list shortcode -->
-           <?php require plugin_dir_path( __FILE__ ).'settings/build-your-account-page/orders-list-sht-setting.php'; ?>
+        <div class="acc_panel">
+            <br /><br />
+        
+            <!-- Username in menu title -->
+            <?php require plugin_dir_path( __FILE__ ).'settings/user-data/username-in-menu-title-setting.php'; ?>
+            
+            <!-- User email shortcode -->
+            <?php require plugin_dir_path( __FILE__ ).'settings/user-data/user-email-sht-setting.php'; ?>
+            
+            <!-- user gravatar image -->
+            <?php require plugin_dir_path( __FILE__ ).'settings/user-data/user-gravatar-image-sht-setting.php'; ?>
+               
+            <!-- IP shortcode -->
+            <?php require plugin_dir_path( __FILE__ ).'settings/user-data/user-ip-sht-setting.php'; ?>   
+            
+            <!-- Name and surname shortcode -->
+            <?php require plugin_dir_path( __FILE__ ).'settings/user-data/username-and-surname-sht-setting.php'; ?>   
+               
+            <!-- Username shortcode -->  
+            <?php require plugin_dir_path( __FILE__ ).'settings/user-data/username-sht-setting.php'; ?>
            
-           <!-- Downloads list shortcode -->
-           <?php require plugin_dir_path( __FILE__ ).'settings/build-your-account-page/downloads-list-sht-setting.php'; ?>
+            <!-- Conditional message to the customer -->
+            <?php require plugin_dir_path( __FILE__ ).'settings/user-data/conditional-message-setting.php'; ?>
+               
+            <!-- Display the user billing data separately -->
+            <?php require plugin_dir_path( __FILE__ ).'settings/user-data/display-user-billing-data-setting.php'; ?>
            
-           <!-- Billing and shipping addresses shortcode -->
-           <?php require plugin_dir_path( __FILE__ ).'settings/build-your-account-page/billing-and-shipping-addresses-sht-setting.php'; ?>
+            <!-- Display the user shipping data separately -->
+            <?php require plugin_dir_path( __FILE__ ).'settings/user-data/display-user-shipping-data-setting.php'; ?>
            
-           <!-- Payment methods shortcode -->
-           <?php require plugin_dir_path( __FILE__ ).'settings/build-your-account-page/payment-methods-sht-setting.php'; ?>
+            <!-- Customer purchased products loop -->
+            <?php require plugin_dir_path( __FILE__ ).'settings/user-data/customer-purchased-products-loop-setting.php'; ?>
+               
+            <!-- Product purchases by current logged in user -->
+            <?php require plugin_dir_path( __FILE__ ).'settings/user-data/product-purchases-by-current-user-setting.php'; ?>
            
-           <!-- Edit account shortcode -->
-           <?php require plugin_dir_path( __FILE__ ).'settings/build-your-account-page/edit-account-sht-setting.php'; ?>
+            <!-- Customer purchased products counter -->
+            <?php require plugin_dir_path( __FILE__ ).'settings/user-data/customer-purchased-products-counter-setting.php'; ?>
+               
+            <!-- Customer total orders counter -->
+            <?php require plugin_dir_path( __FILE__ ).'settings/user-data/customer-total-orders-counter-setting.php'; ?>
            
-           <!-- dashboard shortcode -->
-           <?php //require plugin_dir_path( __FILE__ ).'settings/build-your-account-page/dashboard-sht-setting.php'; ?>
+            <!-- Customer total reviews counter -->
+            <?php require plugin_dir_path( __FILE__ ).'settings/user-data/customer-total-reviews-counter-setting.php'; ?>
            
-           <!-- user gravatar image -->
-           <?php require plugin_dir_path( __FILE__ ).'settings/build-your-account-page/user-gravatar-image-sht-setting.php'; ?>
-           
-           <!-- Username shortcode -->  
-           <?php require plugin_dir_path( __FILE__ ).'settings/build-your-account-page/username-sht-setting.php'; ?>
-           
-           <!-- Logout button with a shortcode-->
-           <?php require plugin_dir_path( __FILE__ ).'settings/build-your-account-page/logout-button-sht-setting.php'; ?>
-           
-           <!-- Login form shortcode -->
-           <?php require plugin_dir_path( __FILE__ ).'settings/build-your-account-page/login-form-sht-setting.php'; ?>
-           
-           <!-- Customer reviews shortcode -->
-           <?php require plugin_dir_path( __FILE__ ).'settings/build-your-account-page/customer-reviews-sht-setting.php'; ?>
-           
-           <!-- IP shortcode -->
-           <?php require plugin_dir_path( __FILE__ ).'settings/build-your-account-page/user-ip-sht-setting.php'; ?>
-           
-           <!-- Name and surname shortcode -->
-           <?php require plugin_dir_path( __FILE__ ).'settings/build-your-account-page/username-and-surname-sht-setting.php'; ?>
-           
-           <!-- User email shortcode -->
-           <?php require plugin_dir_path( __FILE__ ).'settings/build-your-account-page/user-email-sht-setting.php'; ?>
-           
-      </div>
-    </li>
-    <!-- END Section three - BUILD YOUR CUSTOM ACCOUNT PAGE -->
-    
-    
-    <!-- Section four - COUNTERS WITH DATA FROM THE SHOP AND USER -->
-    <li>
-      
-      <div class="acc_ctrl" style="background-color: #fbfbfb; padding: 10px;"><h3 style="margin-top: 25px;padding-left:20px;color:#a46497;letter-spacing: 1px; font-size: 20px;"><span class="dashicons dashicons-backup"></span> <?php esc_html_e( 'COUNTERS WITH DATA FROM THE SHOP AND USER', 'woo-shortcodes-kit' ); ?></h3></div>
-      
-      <!-- Section four - Content -->
-      
-      <div class="acc_panel">
-          
-          <br /><br />
-          
-          
-          
-           <!-- Total shop sales counter -->
-           <?php require plugin_dir_path( __FILE__ ).'settings/counters/total-shop-sales-counter-setting.php'; ?>
-           
-           <!-- Total shop sales amount counter -->
-           <?php require plugin_dir_path( __FILE__ ).'settings/counters/total-shop-sales-amount-counter-setting.php'; ?>
-           
-           <!-- Total products in the shop counter -->
-           <?php require plugin_dir_path( __FILE__ ).'settings/counters/total-shop-products-counter-setting.php'; ?>
-           
-           <!-- Customer purchased products counter -->
-           <?php require plugin_dir_path( __FILE__ ).'settings/counters/customer-purchased-products-counter-setting.php'; ?>
-           
-           <!-- Customer total orders counter -->
-           <?php require plugin_dir_path( __FILE__ ).'settings/counters/customer-total-orders-counter-setting.php'; ?>
-           
-           <!-- Customer total reviews counter -->
-           <?php require plugin_dir_path( __FILE__ ).'settings/counters/customer-total-reviews-counter-setting.php'; ?>
-           
-           <!-- Product Downloads/sales counter -->
-           <?php require plugin_dir_path( __FILE__ ).'settings/counters/product-downloads-sales-counter-setting.php'; ?>
-           
-           <!-- Product purchases by current logged in user -->
-           <?php require plugin_dir_path( __FILE__ ).'settings/counters/product-purchases-by-current-user-setting.php'; ?>
-    
-      </div>
-    </li>
-    <!-- END Section four - COUNTERS WITH DATA FROM THE SHOP AND USER -->
-    
-    
-    
-    <!-- Section five - ADDITIONALS SHORTCODES -->
-    <li>
-      
-      <div class="acc_ctrl" style="background-color: #fbfbfb; padding: 10px;"><h3 style="padding-left:20px;color:#a46497;letter-spacing: 1px; font-size: 20px;margin-top: 25px;"><span class="dashicons dashicons-plus-alt"></span> <?php esc_html_e( 'ADDITIONALS SHORTCODES', 'woo-shortcodes-kit' ); ?></h3></div>
-      
-      <!-- Section five - Content -->
-      <div class="acc_panel">
-          
-          <br /><br />
-          
-          
-           <!-- Customer purchased products loop -->
-           <?php require plugin_dir_path( __FILE__ ).'settings/additionals-shortcodes/customer-purchased-products-loop-setting.php'; ?>
-           
-           <!-- Conditional message to the customer -->
-           <?php require plugin_dir_path( __FILE__ ).'settings/additionals-shortcodes/conditional-message-setting.php'; ?>
-           
-           <!-- Display all products reviews where you want -->
-           <?php require plugin_dir_path( __FILE__ ).'settings/additionals-shortcodes/display-all-the-products-reviews-setting.php'; ?>
-           
-           <!--Display the user total spent according to the order status -->
-           <?php require plugin_dir_path( __FILE__ ).'settings/additionals-shortcodes/display-user-total-spent-setting.php'; ?>
-           
-           <!--Display the user orders according to the status of the order -->
-           <?php require plugin_dir_path( __FILE__ ).'settings/additionals-shortcodes/display-user-orders-by-status-setting.php'; ?>
-           
-           <!-- Display the user billing data separately -->
-           <?php require plugin_dir_path( __FILE__ ).'settings/additionals-shortcodes/display-user-billing-data-setting.php'; ?>
-           
-           <!-- Display the user shipping data separately -->
-           <?php require plugin_dir_path( __FILE__ ).'settings/additionals-shortcodes/display-user-shipping-data-setting.php'; ?>
-           
-           <!-- Display WooCommerce notices -->
-           <?php require plugin_dir_path( __FILE__ ).'settings/additionals-shortcodes/display-wc-notices-setting.php'; ?>
-    
-      </div>
-    </li>
-  <!-- END Section five -ADDITIONALS SHORTCODES -->
+            <!--Display the user total spent according to the order status -->
+            <?php require plugin_dir_path( __FILE__ ).'settings/user-data/display-user-total-spent-setting.php'; ?>
+               
+            <!--Display the user orders according to the status of the order -->
+            <?php require plugin_dir_path( __FILE__ ).'settings/user-data/display-user-orders-by-status-setting.php'; ?>
+            
+            <!--Display the user role shortcode -->
+            <?php require plugin_dir_path( __FILE__ ).'settings/user-data/user-role-sht-setting.php'; ?>
   
-  
-
-  <!-- Section six - RESTRICT CONTENT TO LOGGED AND NON LOGGED IN USERS -->
+        </div>
+    </li>
+    <!-- END Section two - USER DATA -->
+    
+     
+    <!-- Section three - SECURITY -->
     <li>
      
-       <div class="acc_ctrl" style="background-color: #fbfbfb; padding: 10px;"><h3 style="margin-top: 25px;padding-left:20px;color:#a46497;letter-spacing: 1px; font-size: 20px;"><span class="dashicons dashicons-hidden"></span> <?php esc_html_e( 'RESTRICT CONTENT TO LOGGED AND NON LOGGED IN USERS', 'woo-shortcodes-kit' ); ?></h3></div>
+       <div class="acc_ctrl">
+            <h3 class="wshksettitles">
+               <span class="dashicons dashicons-shield"></span> <?php esc_html_e( 'SECURITY', 'woo-shortcodes-kit' ); ?>
+            </h3>
+            <p class="wshksettext"><?php esc_html_e( 'Find in this section all the shortcodes and functions related to enhance your website security', 'woo-shortcodes-kit' ); ?>
+            </p>
+        </div>
        
-       <!-- Section six - content -->
+        <!-- Section three - Content -->
        
-      <div class="acc_panel">
+        <div class="acc_panel">
+            <br /><br />
           
-          <br /><br />
-         
-    
             <!-- Restrict content to users if they are not logged in -->
-            <?php require plugin_dir_path( __FILE__ ).'settings/restrict-content/restrict-content-to-nonlogged-in-users-setting.php'; ?>
+            <?php require plugin_dir_path( __FILE__ ).'settings/add-security-to-shop/restrict-content-to-nonlogged-in-users-setting.php'; ?>
             
             <!-- Restrict content to users if they are logged in -->
-            <?php require plugin_dir_path( __FILE__ ).'settings/restrict-content/restrict-content-to-logged-in-users-setting.php'; ?>
+            <?php require plugin_dir_path( __FILE__ ).'settings/add-security-to-shop/restrict-content-to-logged-in-users-setting.php'; ?>
+          
+            <!--NO SEND USERS -->
+            <?php require plugin_dir_path( __FILE__ ).'settings/add-security-to-shop/wp-no-send-users-setting.php'; ?>
+          
+            <!-- BLOCK ADMIN TOP BAR -->
+            <?php require plugin_dir_path( __FILE__ ).'settings/add-security-to-shop/block-admintopbar-setting.php'; ?>
+          
+            <!-- BLOCK WP-ADMIN and WP-LOGIN ACCESS -->
+            <?php require plugin_dir_path( __FILE__ ).'settings/add-security-to-shop/block-wpadmin-login-setting.php'; ?>
+
+            <!--SECURITY HEADERS -->
+            <?php require plugin_dir_path( __FILE__ ).'settings/add-security-to-shop/security-headers-setting.php'; ?>
+            
+        </div>
+    </li>
+    <!-- END Section three - SECURITY --> 
+  
+  
+    <!-- Section four - SHOP PAGE -->
+    <li>
+      
+        <div class="acc_ctrl">
+            <h3 class="wshksettitles">
+                <span class="dashicons dashicons-store"></span> <?php esc_html_e( 'SHOP PAGE', 'woo-shortcodes-kit' ); ?>
+            </h3>
+            <p class="wshksettext"><?php esc_html_e( 'Find in this section all the shortcodes and functions related to customizing the store page or building a new one.', 'woo-shortcodes-kit' ); ?>
+            </p>
+        </div>
+      
+        <!-- Section four - Content -->
+      
+        <div class="acc_panel">
+            <br /><br />
+          
+            <!-- Display only products of specifics categories -->
+            <?php require plugin_dir_path( __FILE__ ).'settings/customize-the-shop-page/show-only-products-from-specific-cat-setting.php'; ?>
+          
+            <!-- Exclude products of specifics categories -->
+            <?php require plugin_dir_path( __FILE__ ).'settings/customize-the-shop-page/exclude-products-from-specific-cat-setting.php'; ?>
+        
+            <!-- Display saving price and percentages on sale products -->
+            <?php require plugin_dir_path( __FILE__ ).'settings/customize-the-shop-page/saving-price-and-percentages-onsale-products.php'; ?>
+        
+            <!-- products per page manager -->
+            <?php require plugin_dir_path( __FILE__ ).'settings/customize-the-shop-page/products-per-page-manager-setting.php'; ?>
+        
+            <!-- Display max or min price on variable products -->
+            <?php require plugin_dir_path( __FILE__ ).'settings/customize-the-shop-page/display-max-or-min-price-on-variableproducts-setting.php'; ?>
+        
+            <!-- Product Downloads/sales counter -->
+            <?php require plugin_dir_path( __FILE__ ).'settings/customize-the-shop-page/product-downloads-sales-counter-setting.php'; ?>
+       
+            <!-- Total shop sales counter -->
+            <?php require plugin_dir_path( __FILE__ ).'settings/customize-the-shop-page/total-shop-sales-counter-setting.php'; ?>
+           
+            <!-- Total shop sales amount counter -->
+            <?php require plugin_dir_path( __FILE__ ).'settings/customize-the-shop-page/total-shop-sales-amount-counter-setting.php'; ?>
+       
+            <!-- Total products in the shop counter -->
+            <?php require plugin_dir_path( __FILE__ ).'settings/customize-the-shop-page/total-shop-products-counter-setting.php'; ?>
+       
+            <!-- Display all products reviews where you want -->
+            <?php require plugin_dir_path( __FILE__ ).'settings/customize-the-shop-page/display-all-the-products-reviews-setting.php'; ?>
+        
+            <!-- Conditional add to cart button for purchased products -->
+            <?php require plugin_dir_path( __FILE__ ).'settings/customize-the-shop-page/conditional-add-to-cart-button.php'; ?>
+            
+            <!-- customize add to cart button by product type -->
+            <?php require plugin_dir_path( __FILE__ ).'settings/customize-the-shop-page/change-add-to-cart-button-text-setting.php'; ?>
+            
+            <!-- Build a new shop page from scratch -->
+            <?php require plugin_dir_path( __FILE__ ).'settings/customize-the-shop-page/build-a-new-shop-page-setting.php'; ?>
+        
+        </div>
+    </li>
+    <!--END section four - SHOP PAGE -->
+    
+    
+    <!-- Section five - GDPR LAW-->
+    <li>
+     
+        <div class="acc_ctrl">
+            <h3 class="wshksettitles">
+                <span class="dashicons dashicons-thumbs-up"></span> <?php esc_html_e( 'GDPR LAW', 'woo-shortcodes-kit' ); ?>
+            </h3>
+            <p class="wshksettext"><?php esc_html_e( 'Find in this section all the shortcodes and functions related to adapt your shop to respect the GDPR law', 'woo-shortcodes-kit' ); ?>
+            </p>
+        </div>
+       
+        <!-- Section five - Content -->
+       
+        <div class="acc_panel">
+            <br /><br />
+          
+            <!-- GPRD law global settings --> 
+            <?php require plugin_dir_path( __FILE__ ).'settings/adapt-to-gdpr-law/global-settings-setting.php'; ?>
+    
+            <!-- GPRD law on blog comments -->
+            <?php require plugin_dir_path( __FILE__ ).'settings/adapt-to-gdpr-law/blog-comments-setting.php'; ?>
+    
+            <!-- GPRD law on checkout page -->
+            <?php require plugin_dir_path( __FILE__ ).'settings/adapt-to-gdpr-law/checkout-page-setting.php'; ?>
+    
+            <!-- GPRD law on WooCommerce reviews -->
+            <?php require plugin_dir_path( __FILE__ ).'settings/adapt-to-gdpr-law/wc-reviews-setting.php'; ?>
+    
+            <!-- GPRD law in register form-->
+            <?php require plugin_dir_path( __FILE__ ).'settings/adapt-to-gdpr-law/wc-register-form-setting.php'; ?>
+    
+            <!-- add custom terms and conditions -->   
+            <?php require plugin_dir_path( __FILE__ ).'settings/adapt-to-gdpr-law/wc-terms-conditions-setting.php'; ?>
     
         </div>
     </li>
-    <!-- END section six -  RESTRICT CONTENT --> 
-    
-    
-    <!-- Section seven - WOOCOMMERCE ADDITIONAL SETTINGS -->
+    <!--END Section five - GDPR LAW -->
+   
+   
+    <!-- Section six - ADDITIONAL SETTINGS -->
     <li>
      
-       <div class="acc_ctrl" style="background-color: #fbfbfb; padding: 10px;"><h3 style="margin-top: 25px;padding-left:20px;color:#a46497;letter-spacing: 1px; font-size: 20px;"><span class="dashicons dashicons-admin-generic"></span> <?php esc_html_e( 'WOOCOMMERCE ADDITIONAL SETTINGS', 'woo-shortcodes-kit' ); ?></h3></div>
+        <div class="acc_ctrl">
+            <h3 class="wshksettitles">
+                <span class="dashicons dashicons-admin-generic"></span> <?php esc_html_e( 'ADDITIONAL SETTINGS', 'woo-shortcodes-kit' ); ?>
+            </h3>
+            <p class="wshksettext"><?php esc_html_e( 'Find in this section all the shortcodes and functions to enhance the WooCommerce possibilities', 'woo-shortcodes-kit' ); ?>
+            </p>
+        </div>
        
-       <!-- Section seven - content -->
+        <!-- Section six - content -->
        
-      <div class="acc_panel">
-          
-          <br /><br />
+        <div class="acc_panel">
+            <br /><br />
           
             <!-- autocomplete orders -->
             <?php require plugin_dir_path( __FILE__ ).'settings/wc-additional-settings/autocomplete-virtual-orders-setting.php'; ?>
             
-            <!-- custom thank you page -->
-            <?php require plugin_dir_path( __FILE__ ).'settings/wc-additional-settings/custom-thank-you-pages-setting.php'; ?>
-            
             <!-- Disable the new WooCommerce dashboard -->
             <?php require plugin_dir_path( __FILE__ ).'settings/wc-additional-settings/disable-new-wc-dashboard-setting.php'; ?>
-            
-            <!-- Add name and surname fields in WC register form -->
-            <?php require plugin_dir_path( __FILE__ ).'settings/wc-additional-settings/add-name-and-surname-fields-wc-register-form-setting.php'; ?>
-            
-            <!-- Skip cart and go straight to checkout page -->
-            <?php require plugin_dir_path( __FILE__ ).'settings/wc-additional-settings/skip-cart-and-goto-checkout-setting.php'; ?>
             
             <!-- Display product thumbnail in email order -->
             <?php require plugin_dir_path( __FILE__ ).'settings/wc-additional-settings/product-thumbnail-in-email-order-setting.php'; ?>
@@ -474,125 +497,73 @@
             <!-- Product image in the order details -->
             <?php require plugin_dir_path( __FILE__ ).'settings/wc-additional-settings/product-image-in-order-details-setting.php'; ?>
             
-            <!-- Limit the number of products in the cart -->
-            <?php require plugin_dir_path( __FILE__ ).'settings/wc-additional-settings/limit-the-number-of-products-inthe-cart-setting.php'; ?>
+            <!-- Conditional menu -->
+            <?php require plugin_dir_path( __FILE__ ).'settings/wc-additional-settings/conditional-menu-setting.php'; ?>
+            
+            <!-- Shortcodes in menu titles -->
+            <?php require plugin_dir_path( __FILE__ ).'settings/wc-additional-settings/shortcodes-in-menu-titles-setting.php'; ?>
+            
+            <!-- custom thank you page -->
+            <?php require plugin_dir_path( __FILE__ ).'settings/wc-additional-settings/custom-thank-you-pages-setting.php'; ?>
             
             <!-- Change the return to shop button text -->
             <?php require plugin_dir_path( __FILE__ ).'settings/wc-additional-settings/change-the-return-toshop-button-setting.php'; ?>
             
-            <!-- Display saving price and percentages on sale products -->
-        <?php require plugin_dir_path( __FILE__ ).'settings/wc-additional-settings/saving-price-and-percentages-onsale-products.php'; ?>
-        
-            <!-- Display max or min price on variable products -->
-        <?php require plugin_dir_path( __FILE__ ).'settings/wc-additional-settings/display-max-or-min-price-on-variableproducts-setting.php'; ?>
+            <!-- Limit the number of products in the cart -->
+            <?php require plugin_dir_path( __FILE__ ).'settings/wc-additional-settings/limit-the-number-of-products-inthe-cart-setting.php'; ?>
+            
+            <!-- Skip cart and go straight to checkout page -->
+            <?php require plugin_dir_path( __FILE__ ).'settings/wc-additional-settings/skip-cart-and-goto-checkout-setting.php'; ?>
+            
+            <!-- Add name and surname fields in WC register form -->
+            <?php require plugin_dir_path( __FILE__ ).'settings/wc-additional-settings/add-name-and-surname-fields-wc-register-form-setting.php'; ?>
     
-      </div>
-    </li>
-    <!-- END Section seven - WOOCOMMERCE ADDITIONAL SETTINGS -->
-  
-    
-    <!-- Section eight - ADAPT YOUR SHOP TO THE GDPR LAW-->
-    <li>
-     
-       <div class="acc_ctrl" style="background-color: #fbfbfb; padding: 10px;"><h3 style="margin-top: 25px;padding-left:20px;color:#a46497;letter-spacing: 1px; font-size: 20px;"><span class="dashicons dashicons-thumbs-up"></span> <?php esc_html_e( 'ADAPT YOUR SHOP TO THE GDPR LAW', 'woo-shortcodes-kit' ); ?></h3></div>
-       
-       <!-- Section eight - Content -->
-       
-      <div class="acc_panel">
-          
-          <br /><br />
-          
-             <!-- GPRD law global settings --> 
-             <?php require plugin_dir_path( __FILE__ ).'settings/adapt-to-gdpr-law/global-settings-setting.php'; ?>
-    
-             <!-- GPRD law on blog comments -->
-             <?php require plugin_dir_path( __FILE__ ).'settings/adapt-to-gdpr-law/blog-comments-setting.php'; ?>
-    
-             <!-- GPRD law on checkout page -->
-             <?php require plugin_dir_path( __FILE__ ).'settings/adapt-to-gdpr-law/checkout-page-setting.php'; ?>
-    
-             <!-- GPRD law on WooCommerce reviews -->
-             <?php require plugin_dir_path( __FILE__ ).'settings/adapt-to-gdpr-law/wc-reviews-setting.php'; ?>
-    
-             <!-- GPRD law in register form-->
-             <?php require plugin_dir_path( __FILE__ ).'settings/adapt-to-gdpr-law/wc-register-form-setting.php'; ?>
-    
-             <!-- add custom terms and conditions -->   
-             <?php require plugin_dir_path( __FILE__ ).'settings/adapt-to-gdpr-law/wc-terms-conditions-setting.php'; ?>
-    
-      </div>
-    </li>
-    <!--END Section eight - ADAPT YOUR SHOP TO THE GDPR LAW -->
-    
-    
-    
-      <!-- Section nine - ADD SECURITY TO YOUR SHOP -->
-    <li>
-     
-       <div class="acc_ctrl" style="background-color: #fbfbfb; padding: 10px;"><h3 style="margin-top: 25px;padding-left:20px;color:#a46497;letter-spacing: 1px; font-size: 20px;"><span class="dashicons dashicons-shield"></span> <?php esc_html_e( 'ADD SECURITY TO YOUR SHOP', 'woo-shortcodes-kit' ); ?></h3></div>
-       
-       <!-- Section nine - Content -->
-       
-      <div class="acc_panel">
-          
-          <br /><br />
-          
-          <!-- BLOCK WP-ADMIN and WP-LOGIN ACCESS -->
-          <?php require plugin_dir_path( __FILE__ ).'settings/add-security-to-shop/block-wpadmin-login-setting.php'; ?>
-    
-          <!-- BLOCK ADMIN TOP BAR -->
-          <?php require plugin_dir_path( __FILE__ ).'settings/add-security-to-shop/block-admintopbar-setting.php'; ?>
-          
-          <!-- HIDE LOGIN ERROR MESSAGE -->
-          <?php require plugin_dir_path( __FILE__ ).'settings/add-security-to-shop/hide-login-errors-setting.php'; ?>
-   
-          <!--NO SEND USERS -->
-          <?php require plugin_dir_path( __FILE__ ).'settings/add-security-to-shop/wp-no-send-users-setting.php'; ?>
-
-          <!--SECURITY HEADERS -->
-          <?php require plugin_dir_path( __FILE__ ).'settings/add-security-to-shop/security-headers-setting.php'; ?>
-      
         </div>
     </li>
-   <!-- END Section nine - ADD SECURITY TO YOUR SHOP --> 
+    <!-- END Section six - ADDITIONAL SETTINGS -->
+   
     
 
     <!-- PRO Sections - EMAB & WSHK PRO-->
-    <!--<li>-->
+    
     
     <?php
+    
     // Since 1.6.6
     //CHECK IF EASY MY ACCOUNT BUILDER EXISTS
     
     if ( in_array( 'easy-myaccount-builder/easy-myaccount-builder-for-wshk.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
-       include( ABSPATH . '/wp-content/plugins/easy-myaccount-builder/emab-settings.php' );
-        }
+       /*include( ABSPATH . '/wp-content/plugins/easy-myaccount-builder/emab-settings.php' );*/
+       include( WP_CONTENT_DIR .'/plugins/easy-myaccount-builder/emab-settings.php');
+    }
         
     //Since 1.6.7
     //CHECK IF CUSTOM REDIRECTIONS EXISTS
     
     if ( in_array( 'custom-redirections-for-wshk/custom-redirections-for-whsk.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
-       include( ABSPATH . '/wp-content/plugins/custom-redirections-for-wshk/cusre-settings.php' );
-        }
+       /*include( ABSPATH . '/wp-content/plugins/custom-redirections-for-wshk/cusre-settings.php' );*/
+       include( WP_CONTENT_DIR .'/plugins/custom-redirections-for-wshk/cusre-settings.php');
+    }
     
     ?>
-        <!--</div>
-    </li>-->
     
-    
-    <!-- END Section accordions -->
-      </ul>
+    </ul>
     </div>
+    <!-- END Section accordions -->
     
-        
-    <!--END White box-->
     </div>
     <br /><br /><br /><br />
-    
+    <!--END White box-->
     
         
-        <center><button class="probando" type="submit" id="toggle" onclick="click()"><img id="btnimg" class="wshksetimg" src="<?php echo  plugins_url( 'images/wshk-save-settings.png' , __FILE__ );?>" ;> <span id="btntx" class="wshksettext"><?php esc_html_e( 'SAVE SETTINGS', 'woo-shortcodes-kit' ); ?></span></button></center>
-        <button title="<?php esc_html_e( 'SAVE SETTINGS', 'woo-shortcodes-kit' ); ?>" class="probandote" type="submit" id="toggle" onclick="click()"><img id="btnimgo" class="wshksetimgo" src="<?php echo  plugins_url( 'images/wshk-save-settings.png' , __FILE__ );?>" ;> <span id="btntx" class="wshksettexto"><?php esc_html_e( 'SAVE SETTINGS', 'woo-shortcodes-kit' ); ?></span></button>
+    <center>
+        <button class="probando" type="submit" id="toggle" onclick="click()"><img id="btnimg" class="wshksetimg" src="<?php echo  plugins_url( 'images/wshk-save-settings.png' , __FILE__ );?>" ;> <span id="btntx" class="wshksettextbtn"><?php esc_html_e( 'SAVE SETTINGS', 'woo-shortcodes-kit' ); ?></span>
+        </button>
+    </center>
+    
+    <button title="<?php esc_html_e( 'SAVE SETTINGS', 'woo-shortcodes-kit' ); ?>" class="probandote" type="submit" id="toggle" onclick="click()"><img id="btnimgo" class="wshksetimgo" src="<?php echo  plugins_url( 'images/wshk-save-settings.png' , __FILE__ );?>" ;> <span id="btntx" class="wshksettexto"><?php esc_html_e( 'SAVE SETTINGS', 'woo-shortcodes-kit' ); ?></span>
+    </button>
+    
     <?php settings_fields('wshk_options');?>
     
     </form>
@@ -641,18 +612,18 @@
     </script>
     <!-- END Floating save settings button -->
    
-   </div>
-   <!-- END Settings tab -->
+    </div>
+    <!-- END Settings tab -->
    
    
-   <!-- News - from v.1.8.0 -->
-   <?php require plugin_dir_path( __FILE__ ).'sections/news-section.php'; ?>
+    <!-- News - from v.1.8.0 -->
+    <?php require plugin_dir_path( __FILE__ ).'sections/news-section.php'; ?>
    
-   <!-- Languages -->
+    <!-- Languages -->
     <?php require plugin_dir_path( __FILE__ ).'sections/languages-section.php'; ?>
     
     <!-- recomends - from v.1.8.7 -->
-   <?php require plugin_dir_path( __FILE__ ).'sections/recommends-section.php'; ?>
+    <?php require plugin_dir_path( __FILE__ ).'sections/recommends-section.php'; ?>
     
     <!-- Contact -->
     <?php require plugin_dir_path( __FILE__ ).'sections/contact-section.php'; ?>

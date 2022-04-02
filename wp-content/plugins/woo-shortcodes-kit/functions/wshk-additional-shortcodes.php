@@ -1470,7 +1470,7 @@ if ( isset($getenableordercountser) && $getenableordercountser =='8822')
 
 
 
-//Since 1.8.7 - updated v.1.9.1
+//Since 1.8.7 - updated v.2.0.1
 
 //DISPLAY WOOCOMMERCE NOTICES
 //You can add the shortcode on any site, recommended custom myaccount page or custom shop page. [wshk_display_notices]
@@ -1481,7 +1481,10 @@ if ( isset($getdisplaywoonotices) && $getdisplaywoonotices =='18701')
 
     function wshk_displaynotices() {
         ob_start();
-        wc_print_notices();
+        //wc_print_notices();
+        if ( function_exists( 'wc_print_notices' ) ) {
+			wc_print_notices();
+		}
        return ob_get_clean();
     }
     add_shortcode('wshk_display_notices', 'wshk_displaynotices');

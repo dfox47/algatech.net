@@ -61,7 +61,7 @@ class Marketing {
 		add_action( 'admin_menu', array( $this, 'add_parent_menu_item' ), 6 );
 
 		add_filter( 'woocommerce_admin_preload_options', array( $this, 'preload_options' ) );
-		add_filter( 'woocommerce_shared_settings', array( $this, 'component_settings' ), 30 );
+		add_filter( 'woocommerce_admin_shared_settings', array( $this, 'component_settings' ), 30 );
 	}
 
 	/**
@@ -265,8 +265,7 @@ class Marketing {
 						'author_avatar' => isset( $raw_post['author_avatar_url'] ) ? $raw_post['author_avatar_url'] : '',
 					];
 
-					$featured_media = $raw_post['_embedded']['wp:featuredmedia'];
-
+					$featured_media = $raw_post['_embedded']['wp:featuredmedia'] ?? [];
 					if ( count( $featured_media ) > 0 ) {
 						$image         = current( $featured_media );
 						$post['image'] = add_query_arg(

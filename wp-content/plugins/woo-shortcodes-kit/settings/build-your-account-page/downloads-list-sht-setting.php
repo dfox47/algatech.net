@@ -21,7 +21,7 @@ Downloads list shortcode
     <br /><br />
     <p class="wshkfirststepfunc"><b>1.- <?php esc_html_e( 'The shortcode', 'woo-shortcodes-kit' ); ?></b><br><small><?php esc_html_e( 'Use it only in your custom account page', 'woo-shortcodes-kit' ); ?></small></p>
 <br><br><br>
-    <div onmousedown="return false;" onselectstart="return false;" style="max-height:130px;background-color:#a46497;color:white;border:1px solid #a46497;border-radius:13px;">
+    <div onmousedown="return false;" onselectstart="return false;" class="wshkshtboxes">
 <table style="margin-top:-20px;">
           <colgroup>
     <col span="3">
@@ -33,7 +33,7 @@ Downloads list shortcode
         <td class="shtboxtwo" style="width: 23%; padding-left: 30px;"><p><big>
 
 <div class="tooltip">
-<button style="padding:10px;background-color:#a46497;color:white;border:1px solid white;border-radius:13px;cursor:pointer;" type="button" onclick="myFunctiondownloads()" onmouseout="outFuncdownloads()">
+<button class="wshkshtboxesbtn" type="button" onclick="myFunctiondownloads()" onmouseout="outFuncdownloads()">
   <span class="tooltiptext" id="myTooltipdownloads"><?php esc_html_e( 'Copy to Clipboard', 'woo-shortcodes-kit' ); ?></span>
   <?php esc_html_e( 'Copy shortcode', 'woo-shortcodes-kit' ); ?>
   </button>

@@ -9,93 +9,338 @@
     div#wpfooter {
         margin-left: 0px;
     }
+    
+    /*Plugin page*/
+    
+    .wshkpagebg {
+        width: 90%;
+        max-width:1920px;
+        padding:10px;
+        margin:10px;
+        height:auto;
+    }
+    
+    /*Plugin header*/
+    
+    .wshkheadlogo {
+        float:left;
+        width:64px;
+    }
+    
+    .wshkplutitle {
+        margin-top: 25px;
+        padding-left: 70px;
+        font-weight: 700;
+        font-family: "Roboto";
+        letter-spacing:1px;
+    }
+    
+    .wshkquerys {
+        font-size: 12px;
+        color: #faf8fc;
+        float:right;
+        font-size: 12px;
+        color: #faf8fc;
+    }
+    
+    
+    /*Plugin menu*/
+    
+    .wshk-tab-links {
+        border: 1px solid white;
+        border-radius:15px;
+        height: 95px;
+        padding-top:20px;
+        padding-bottom:10px;
+        text-align:center;
+        width:85px;
+        text-transform:uppercase;
+        letter-spacing:1px;
+    }
+    
+    
+    /*Plugin white bg for content*/
+    
+    .wshkpagewhitebg {
+        background-color:white;
+        /*width: 100%;*/
+        padding:20px 20px 20px 20px;
+        border:1px solid white;
+        border-radius:13px;
+    }
+    
+    
+    /*Plugin info boxes*/
+    
+    .wshkinfoboxes {
+        padding-left:10px;
+        padding:20px;
+        border:1px solid #60329b;
+        border-radius:13px;
+    }
+    
+    .wshkinfoboxtitle {
+        margin-bottom:-10px;
+        font-weight:700;
+        font-family:'Roboto';
+        color:#60329b;
+        font-size:26px;
+    }
+    
+    .wshkinfoboxdesc {
+        color:#321A51;
+        font-size:14px;
+        padding-left: 25px;
+        font-weight:400;
+        font-family:'Roboto';
+        margin-top:20px;
+    }
+    
+    
+    /*Sections accordion - first step*/
 
-/*SAVE SETTINGS*/
+    .pcontainer {
+        width: 100%;
+        /*margin: 0 auto;*/
+    }
 
-  .probando {
-    background-color: #c6adc2;
-    border: 1px solid #c6adc2;
-    border-radius: 13px;
-    color: white;
-    /* padding: 16px 32px; */
-    width: 50%;
-    height: 55px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 18px;
-    margin: 4px 2px;
-    /* -webkit-transition-duration: 0.3s; */
-    /* transition-duration: 0.3s; */
-    cursor: pointer;
-    letter-spacing: 1px;
-}
+    .acc {
+        margin-top: 50px;
+        overflow: hidden;
+        /*padding: 0;*/
+    }
+
+    .acc li {
+        list-style-type: none;
+        /*padding: 0;*/
+    }
+
+    .acc_ctrl {
+        background: #faf8fc !important;
+        /*background: linear-gradient(45deg, #f7f7f7, #ffffff);*/
+        border: 1px solid #faf8fc;
+        border-bottom: solid 1px #faf8fc;
+        cursor: pointer;
+        display: block;
+        outline: none;
+        padding: 10px;
+        position: relative;
+        text-align: left;
+        /*width: 97%;*/
+        border-radius:10px;
+    }
+
+    .acc_ctrl:before {
+        /*background: #44596B;*/
+        /*background:red !important;*/
+        content: '\271A';
+        color:#60329b !important;
+        height: 2px;
+        margin-right: 37px;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg);
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -ms-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+        width: 20px !important;
+        font-size:20px;
+    }
+
+    .wshksettitles {
+        color:#60329b !important;
+        font-weight:700;
+        font-family: "Roboto";
+        margin-top:25px;
+        padding-left:20px;
+        letter-spacing:1px;
+        font-size: 20px;
+    }
+
+    .wshksettext {
+        color:#321A51 !important;
+        font-weight:400;
+        font-family: "Roboto";
+        font-size:15px !important;
+        margin-top:-10px;
+        padding-left:20px;
+    }
+
+    .acc_ctrl:after {
+        /*background: #44596B;*/
+        /*content: '\271A';*/
+        color:#60329b !important;
+        height: 2px;
+        margin-right: 37px;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        width: 20px;
+    }
+
+    .acc_ctrl.active:before {
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+        font-size:24px;
+    }
+
+    .acc_ctrl.active h2, .acc_ctrl:focus h2 {
+        position: relative;
+    }
+
+    .acc_panel {
+        /*background: #F2F2F2;*/
+        display: none;
+        overflow: hidden;
+    }
+
+    div.acc_ctrl > h3 {
+        max-width:80% !important;
+    }
+    
+    
+
+    /*SAVE SETTINGS bottom*/
+
+    .probando {
+        background-color: #321A51;
+        border: 1px solid #321A51;
+        opacity:0.5 !important;
+        border-radius: 13px;
+        color: white;
+        /* padding: 16px 32px; */
+        width: 30%;
+        height: 55px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 18px;
+        margin: 4px 2px;
+        /* -webkit-transition-duration: 0.3s; */
+        /* transition-duration: 0.3s; */
+        cursor: pointer;
+        letter-spacing: 1px;
+    }
 
 
-.probando:Hover {
-    background-color: #a46497; 
-    color: white; 
-    border: 1px solid #a46497;
-    border-radius: 13px;
-}
+    .probando:Hover {
+        background-color: #321A51; 
+        color: white; 
+        border: 1px solid #321A51;
+        border-radius: 13px;
+        opacity:1 !important;
+    }
 
 
 
-.wshksettexto {
-    display:none;
-}
+    .wshksettexto {
+        display:none;
+    }
+    
+    .wshksetimgo{
+        width:32px;
+        height:32px;
+    }
+    
+    .wshksetimg {
+        width: 25px; 
+        height: 25px;
+        vertical-align: sub;
+    }
+    
+    
+    /*SAVE SETTINGS floating*/
 
-.wshksetimgo{
-    width:32px;
-    height:32px;
-}
-
-.wshksetimg {
-    width: 25px; 
-    height: 25px;
-    vertical-align: sub;
-}
-
-.probandote {
-background-color: #c6adc2;
-border: 1px solid #c6adc2;
-color: white;
-padding: 10px;
-width: 60px;
-height: auto;
-text-align: center;
-text-decoration: none;
-display: inline-block;
-font-weight: 900;
-text-transform: uppercase;
-font-size: 11px;
-/* margin: 4px 2px; */
-/*-webkit-transition-duration: 0.3s;*/
-/*transition-duration: 0.3s;*/
-cursor: pointer;
-letter-spacing: 1px;
-z-index: 9999;
-position: fixed;
-right: 2px;
-top: 470px;
-/*transition: all 0.2s ease-in 0s;*/
-border-radius:13px;
--webkit-box-shadow: 0px 2px 4px 0px rgba(112,112,112,0.40);
--moz-box-shadow: 0px 2px 4px 0px rgba(112,112,112,0.40);
-box-shadow: 0px 2px 4px 0px rgba(112,112,112,0.40);
-}
-
-.probandote:hover {
-background-color: #a46497; 
-color: white; 
-border: 1px solid #a46497;
-border-top-left-radius: 13px;
-border-bottom-left-radius: 13px;
-}
-
-/*END*/    
+    .probandote {
+        background-color: #321A51;
+        border: 1px solid #321A51;
+        color: white;
+        padding: 10px;
+        width: 60px;
+        height: auto;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-weight: 900;
+        text-transform: uppercase;
+        font-size: 11px;
+        /* margin: 4px 2px; */
+        /*-webkit-transition-duration: 0.3s;*/
+        /*transition-duration: 0.3s;*/
+        cursor: pointer;
+        letter-spacing: 1px;
+        z-index: 9999;
+        position: fixed;
+        right: 2px;
+        top: 470px;
+        /*transition: all 0.2s ease-in 0s;*/
+        border-radius:13px;
+        -webkit-box-shadow: 0px 2px 4px 0px rgba(112,112,112,0.40);
+        -moz-box-shadow: 0px 2px 4px 0px rgba(112,112,112,0.40);
+        box-shadow: 0px 2px 4px 0px rgba(112,112,112,0.40);
+        opacity:0.5 !important;
+    }
+    
+    .probandote:hover {
+        background-color: #321A51; 
+        color: white; 
+        border: 1px solid #321A51;
+        border-top-left-radius: 13px;
+        border-bottom-left-radius: 13px;
+        opacity:1 !important;
+    }
+    
+    
+    /*settings box*/
+    
+    .show {
+        background-color: white;
+        padding: 30px;
+        border-radius: 13px;
+        margin: 0px 20px 20px 20px;
+        box-shadow: 5px 10px 18px #ededed;
+    }
+    
+    b {
+        color:#321A51;
+        font-size:14px;
+    }
+    
+    .wshkshtboxes {
+        max-height:130px;
+        background-color:#321A51;
+        color:white;
+        border:1px solid #321A51;
+        border-radius:13px;
+    }
+    
+    
+    .wshkshtboxesbtn {
+        padding:10px;
+        background-color:#321A51;
+        color:white;
+        border:1px solid white;
+        border-radius:13px;
+        cursor:pointer;
+    }
+    
+    .wshkshtboxesbtn:hover {
+        background-color:#60329b/*#60329bcc;*/
+    }
+    
+    /*END*/    
 
 input[type=checkbox].testininputclass{
 	height: 0;
@@ -121,7 +366,7 @@ label.testintheclass:after {
 	left: 5px;
 	width: 22px;
 	height: 22px;
-	background: #c6adc2;
+	background: #d0bce9;
 	border-radius: 90px;
 	transition: 0.3s;
 }
@@ -211,7 +456,7 @@ box-sizing: border-box;
 
 /* Style the element that is used to open and close the accordion class */
 div.accordion {
- background-color: #a46497;
+ background-color: #9b71d2;
  color: #fff;
  cursor: pointer;
  padding: 18px;
@@ -225,7 +470,7 @@ div.accordion {
 }
 /* Add a background color to the accordion if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 div.accordion.active, p.accordion:hover {
- background-color: #c6adc2;
+ background-color: #d0bce9;
 }
 /* Unicode character for "plus" sign (+) */
 div.accordion:after {
@@ -240,7 +485,7 @@ div.accordion:after {
 div.accordion.active:after {
  content: "<?php esc_html_e( 'Hide Advanced Options', 'woo-shortcodes-kit' ); ?>  \1f5d9";
  font-size: 15px;
- color: #a46497;
+ color: #60329b;
  float: right;
  margin-left: 5px;
  margin-top: -20px;
@@ -301,94 +546,7 @@ div.panel.show {
   opacity: 1;
 }
 
-/*Sections accordion - first step*/
 
-.pcontainer {
-  width: 100%;
-  /*margin: 0 auto;*/
-  
-}
-
-.acc {
-  margin-top: 50px;
-  overflow: hidden;
-  /*padding: 0;*/
-}
-
-.acc li {
-  list-style-type: none;
-  /*padding: 0;*/
-}
-
-.acc_ctrl {
-  /*background: #FFFFFF;*/
-  background: linear-gradient(45deg, #f7f7f7, #ffffff);
-  border: 1px solid #f7f7f7;
-  border-bottom: solid 1px #f7f7f7;
-  cursor: pointer;
-  display: block;
-  outline: none;
-  padding: 2em;
-  position: relative;
-  text-align: left;
-  /*width: 97%;*/
-}
-
-
-.acc_ctrl:before {
-  /*background: #44596B;*/
-  content: '';
-  height: 2px;
-  margin-right: 37px;
-  position: absolute;
-  right: 0;
-  top: 50%;
-  -webkit-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  -o-transform: rotate(90deg);
-  transform: rotate(90deg);
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -ms-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  width: 14px;
-}
-
-.acc_ctrl:after {
-  /*background: #44596B;*/
-  content: '';
-  height: 2px;
-  margin-right: 37px;
-  position: absolute;
-  right: 0;
-  top: 50%;
-  width: 14px;
-}
-
-.acc_ctrl.active:before {
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  transform: rotate(0deg);
-}
-
-.acc_ctrl.active h2, .acc_ctrl:focus h2 {
-  position: relative;
-}
-
-.acc_panel {
-  /*background: #F2F2F2;*/
-  display: none;
-  overflow: hidden;
-}
-
-div.acc_ctrl > h3 {
-    
-    max-width:80% !important;
-    }
     
     
 /*WSHK FUNCTIONS INTRO BOX*/
@@ -404,13 +562,29 @@ div.acc_ctrl > h3 {
 }
 
 
-/*Responsive*/
+/*Responsive - 1024 - 768 - 425*/
+
+
+@media screen and (max-width: 1024px) {
+/*Top menu buttons*/
+    /*#wshk-tab-menu {
+        column-count: 2 !important;
+    }*/
+    
+    #wshk-tab-menu a {
+        margin-bottom:10px;
+    }
+}
 
 @media screen and (max-width: 450px) {
 /*Top menu buttons*/
     #wshk-tab-menu {
         column-count: 2 !important;
     }
+    
+    /*#wshk-tab-menu a {
+        margin-bottom:10px;
+    }*/
 }
 
 @media screen and (max-width: 599px) {
@@ -424,7 +598,7 @@ div.acc_ctrl > h3 {
     }
     /*Plugin querys*/
     .wshkquerys {
-        margin-top:15px !Important;
+        margin-top:1px !Important;
     }
     /*Top menu buttons*/
     #wshk-general, #wshk-news, #wshk-languages, #wshk-recom, #wshk-contact {
@@ -455,7 +629,7 @@ div.acc_ctrl > h3 {
     .boxwshknotify {
     /* margin: 0px 80px; */
     padding: 30px 30px !important;
-    background: linear-gradient(45deg, #74689b, #74689bba) !important;
+    /*background: linear-gradient(45deg, #74689b, #74689bba) !important;*/
     width: 80% !important;
     margin: auto !important;
     }

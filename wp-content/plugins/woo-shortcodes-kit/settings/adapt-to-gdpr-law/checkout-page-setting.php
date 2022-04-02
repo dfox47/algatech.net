@@ -59,7 +59,7 @@ You can write all of you want.', 'woo-shortcodes-kit' ); ?>" size="30%" style="h
     </tr>
 </table>
     <div class="forsmalldropdowns" style="padding-left:30px;">
-    <p><strong>4.- <?php esc_html_e( 'Display options', 'woo-shortcodes-kit' ); ?></strong><br><small><?php esc_html_e( 'You can choose if you want to show or hide the privacy policy checkbox for logged in users. If your users have accepted the privacy policy and you want to skip this step for the following orders, just check the option and it will be hide and checked automatically.', 'woo-shortcodes-kit' ); ?></small></p><br>
+    <p><b>4.- <?php esc_html_e( 'Display options', 'woo-shortcodes-kit' ); ?></b><br><small><?php esc_html_e( 'You can choose if you want to show or hide the privacy policy checkbox for logged in users. If your users have accepted the privacy policy and you want to skip this step for the following orders, just check the option and it will be hide and checked automatically.', 'woo-shortcodes-kit' ); ?></small></p><br>
     <input type="checkbox" id="wshk_get_pol_hide" name="wshk_get_pol_hide" value='hide' <?php if(get_option('wshk_get_pol_hide')!=''){ echo ' checked="checked"'; }?> /><label for="wshk_get_pol_hide"><?php esc_html_e( 'Hide Privacy policy checkbox for logged in users', 'woo-shortcodes-kit' ); ?></label><br>
 </div>
     

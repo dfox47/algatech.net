@@ -123,6 +123,11 @@ if (!defined('WP_UNINSTALL_PLUGIN')) {
     	delete_option('wshk_gdpr_reviews_link_text');
     	delete_option('wshk_gdpr_regform_link_text');
     	
+    	/*Since 2.0.0*/
+    	delete_option('wshk_disableorderstemplate');
+    	delete_option('wshk_enableuserrole');
+    	delete_option('wshk_userroleoptions');
+    	
     	
     	delete_option('wshk_yesenable');
     	delete_option('wshk_yesenabletwo');

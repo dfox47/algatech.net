@@ -21,19 +21,19 @@ Edit account shortcode
     <br /><br />
     <p class="wshkfirststepfunc"><b>1.- <?php esc_html_e( 'The shortcode', 'woo-shortcodes-kit' ); ?></b><br><small><?php esc_html_e( 'Use it only in your custom account page', 'woo-shortcodes-kit' ); ?></small></p>
 <br><br><br>
-    <div onmousedown="return false;" onselectstart="return false;" style="max-height:130px;background-color:#a46497;color:white;border:1px solid #a46497;border-radius:13px;">
+    <div onmousedown="return false;" onselectstart="return false;" class="wshkshtboxes">
 <table style="margin-top:-20px;">
           <colgroup>
     <col span="3">
    
   </colgroup>
          <tr>
-        <td class="shtboxone" style="width: 23%; padding-left: 30px;"><p><big><strong><span class="dashicons dashicons-code-standards"></span> <?php esc_html_e( 'Shortcode:', 'woo-shortcodes-kit' ); ?></strong><br><input class="testininputclass" onmousedown="return false;" onselectstart="return false;" style="color:white;margin-top:10px;outline:0;-moz-outline: 0;border-color:#a46497;" type="text" value="[woo_myedit_account]" id="woomyeditaccount" readonly></big><br /><br /></p></td>
+        <td class="shtboxone" style="width: 23%; padding-left: 30px;"><p><big><strong><span class="dashicons dashicons-code-standards"></span> <?php esc_html_e( 'Shortcode:', 'woo-shortcodes-kit' ); ?></strong><br><input class="testininputclass" onmousedown="return false;" onselectstart="return false;" style="color:white;margin-top:10px;outline:0;-moz-outline: 0;border-color:#321A51;" type="text" value="[woo_myedit_account]" id="woomyeditaccount" readonly></big><br /><br /></p></td>
         
         <td class="shtboxtwo" style="width: 23%; padding-left: 30px;"><p><big>
 
 <div class="tooltip" style="width:120px;">
-<button style="padding:10px;background-color:#a46497;color:white;border:1px solid white;border-radius:13px;width:150px;" type="button" onclick="myFunctioneditaccount()" onmouseout="outFunceditaccount()">
+<button class="wshkshtboxesbtn" style="width:150px;" type="button" onclick="myFunctioneditaccount()" onmouseout="outFunceditaccount()">
   <span class="tooltiptext" id="myTooltipeditaccount"><?php esc_html_e( 'Copy to Clipboard', 'woo-shortcodes-kit' ); ?></span>
   <?php esc_html_e( 'Copy shortcode', 'woo-shortcodes-kit' ); ?>
   </button>
@@ -74,7 +74,7 @@ function outFunceditaccount() {
 if ( in_array( 'custom-redirections-for-wshk/custom-redirections-for-whsk.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
         
         //Checking
-        require_once( ABSPATH . '/wp-content/plugins/custom-redirections-for-wshk/CustomBlocksandRedirectionsBase.php' ); 
+        require_once( WP_CONTENT_DIR .'/plugins/custom-redirections-for-wshk/CustomBlocksandRedirectionsBase.php' ); 
         $licenseCode=get_option("CustomBlocksandRedirections_lic_Key","");
         $licenseEmail=get_option( "CustomBlocksandRedirections_lic_email","");
         CustomBlocksandRedirectionsBase::addOnDelete(function(){

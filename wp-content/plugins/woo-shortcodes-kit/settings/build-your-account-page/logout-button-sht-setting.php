@@ -11,7 +11,7 @@ Logout button shortcode
    
   </colgroup>
   <tr>
-    <th><p><input type="checkbox" class="testininputclass" id="wshk_enablelogoutbtn" name="wshk_enablelogoutbtn" value='12' <?php if(get_option('wshk_enablelogoutbtn')!=''){ echo ' checked="checked"'; }?>/><label class="testintheclass" for=wshk_enablelogoutbtn></label><br /></th><th class="forcontainertitles" style="padding: 20px 20px 0px 20px;"> <big><?php esc_html_e( 'Logout button shortcode', 'woo-shortcodes-kit' ); ?></big><br /><small> <?php esc_html_e( 'Activate the function and click here to configure it', 'woo-shortcodes-kit' ); ?></small></p></th></tr>
+    <th><p><input type="checkbox" class="testininputclass" id="wshk_enablelogoutbtn" name="wshk_enablelogoutbtn" value='12' <?php if(get_option('wshk_enablelogoutbtn')!=''){ echo ' checked="checked"'; }?>/><label class="testintheclass" for=wshk_enablelogoutbtn></label><br /></th><th class="forcontainertitles" style="padding: 20px 20px 0px 20px;"> <big><?php esc_html_e( 'Logout button shortcode', 'woo-shortcodes-kit' ); ?> <!--<span style="background-color: #aadb4a; color: white;border:1px solid #aadb4a;border-radius:13px;padding:5px;text-transform: uppercase;font-size:10px;"><?php esc_html_e( 'UPDATED', 'woo-shortcodes-kit' ); ?></span>--></big><br /><small> <?php esc_html_e( 'Activate the function and click here to configure it', 'woo-shortcodes-kit' ); ?></small></p></th></tr>
     </table>
 </div>
 <!-- content -->
@@ -21,7 +21,7 @@ Logout button shortcode
     <br /><br />
     <p class="wshkfirststepfunc"><b>1.- <?php esc_html_e( 'The shortcode', 'woo-shortcodes-kit' ); ?></b><br><small><?php esc_html_e( 'Use it only in your custom account page', 'woo-shortcodes-kit' ); ?></small></p>
 <br><br><br>
-    <div onmousedown="return false;" onselectstart="return false;" style="max-height:130px;background-color:#a46497;color:white;border:1px solid #a46497;border-radius:13px;">
+    <div onmousedown="return false;" onselectstart="return false;" class="wshkshtboxes">
 <table style="margin-top:-20px;">
           <colgroup>
     <col span="3">
@@ -33,7 +33,7 @@ Logout button shortcode
         <td class="shtboxtwo" style="width: 23%; padding-left: 30px;"><p><big>
 
 <div class="tooltip" style="width:120px;">
-<button style="padding:10px;background-color:#a46497;color:white;border:1px solid white;border-radius:13px;width:150px;" type="button" onclick="myFunctionlogout()" onmouseout="outFunclogout()">
+<button class="wshkshtboxesbtn" style="width:150px;" type="button" onclick="myFunctionlogout()" onmouseout="outFunclogout()">
   <span class="tooltiptext" id="myTooltiplogout"><?php esc_html_e( 'Copy to Clipboard', 'woo-shortcodes-kit' ); ?></span>
   <?php esc_html_e( 'Copy shortcode', 'woo-shortcodes-kit' ); ?>
   </button>

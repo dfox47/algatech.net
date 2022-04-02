@@ -368,6 +368,7 @@ if ( isset($getreturntoshopbtn) && $getreturntoshopbtn =='2011')
 $getenablesavingprices = get_option('wshk_enablesavingprices');
 if ( isset($getenablesavingprices) && $getenablesavingprices =='24')
     {
+        
     
     if ( in_array( 'custom-redirections-for-wshk/custom-redirections-for-whsk.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
         
@@ -380,10 +381,13 @@ if ( isset($getenablesavingprices) && $getenablesavingprices =='24')
                 
                 add_filter( 'woocommerce_get_price_html', 'wshk_display_savings_price_and_percentages', 20, 2 );
                 
+                
+                
             }
     } else {
     
-        add_filter( 'woocommerce_get_price_html', 'wshk_display_savings_price_and_percentages', 20, 2 );    
+        add_filter( 'woocommerce_get_price_html', 'wshk_display_savings_price_and_percentages', 20, 2 );
+        
     }
 	
 	function wshk_display_savings_price_and_percentages( $price_html, $product ) {
@@ -404,8 +408,8 @@ if ( isset($getenablesavingprices) && $getenablesavingprices =='24')
 		if( is_admin() || ! $product->is_on_sale() )
 			return $price_html;
 
-		// Only on archives pages
-		if( ! ( is_shop() || is_product_category() || is_product_tag() || is_product() ) )
+		// Only on archives pages - updated v.2.0
+		if( ! ( is_shop() || is_product_category() || is_product_tag() || is_product() || is_product_taxonomy() ) )
 			return $price_html;
 
 		// Variable product type
@@ -446,11 +450,9 @@ if ( isset($getenablesavingprices) && $getenablesavingprices =='24')
 		}
 
 		return $price_html.'
-		<style>
-		
-			/*Global style*/
-			.wshk-on-sale {
-			background-color:'.$getonsalebg.';
+		<div class="wshk-box-onsale">
+		<p class="wshk-on-sale" style="
+		background-color:'.$getonsalebg.';
 			color:'.$getonsaleftcolor.';
 			border:'.$getonsalebdsize.'px '.$getonsalebdtype.' '. $getonsalebdcolor .';
 			border-radius:'.$getonsalebdradius.';
@@ -458,24 +460,7 @@ if ( isset($getenablesavingprices) && $getenablesavingprices =='24')
 			text-transform:'.$getonsaletxttransf.';
 			font-weight:'.$getonsaletxtweight.';
 			font-size:'.$getonsaletextsize.';		
-			width:fit-content;
-			}
-			
-			/*Styling the product loop badge*/
-			span.price > p.wshk-on-sale {
-			    margin:auto;
-			    margin-top:10px;
-			}
-			
-			/*Styling the dynamic badge on variable products page*/
-			div > span.price > p.wshk-on-sale {
-			    margin:0px;
-			    margin-top:10px;
-			    margin-bottom:20px;
-			}
-			
-		</style>
-		<p class="wshk-on-sale">' . sprintf( '%s %s (%s)', $save_text, $save_price, $save_percentage ) . '</p>';	
+			width:fit-content;">' . sprintf( '%s %s (%s)', $save_text, $save_price, $save_percentage ) . '</p></div>';	
 	}
 
 	//Hide default sale badge - wshk_yessalebadge

@@ -50,7 +50,8 @@ class Homescreen {
 			add_action( 'admin_head', array( $this, 'update_link_structure' ), 20 );
 		}
 		add_filter( 'woocommerce_admin_preload_options', array( $this, 'preload_options' ) );
-		add_filter( 'woocommerce_shared_settings', array( $this, 'component_settings' ), 20 );
+
+		add_filter( 'woocommerce_admin_shared_settings', array( $this, 'component_settings' ), 20 );
 	}
 
 	/**
@@ -76,7 +77,7 @@ class Homescreen {
 	 */
 	public function register_page() {
 		// Register a top-level item for users who cannot view the core WooCommerce menu.
-		if ( ! $this->is_admin_user() ) {
+		if ( ! self::is_admin_user() ) {
 			wc_admin_register_page(
 				array(
 					'id'         => 'woocommerce-home',
@@ -102,9 +103,19 @@ class Homescreen {
 
 	/**
 	 * Check if the user can access the top-level WooCommerce item.
+	 *
+	 * @return bool
 	 */
-	public function is_admin_user() {
-		return current_user_can( 'edit_others_shop_orders' ) || current_user_can( 'manage_woocommerce' );
+	public static function is_admin_user() {
+		if ( ! class_exists( 'WC_Admin_Menus', false ) ) {
+			include_once WC_ABSPATH . 'includes/admin/class-wc-admin-menus.php';
+		}
+		if ( method_exists( 'WC_Admin_Menus', 'can_view_woocommerce_menu_item' ) ) {
+			return \WC_Admin_Menus::can_view_woocommerce_menu_item() || current_user_can( 'manage_woocommerce' );
+		} else {
+			// We leave this line for WC versions <= 6.2.
+			return current_user_can( 'edit_others_shop_orders' ) || current_user_can( 'manage_woocommerce' );
+		}
 	}
 
 	/**
@@ -113,7 +124,7 @@ class Homescreen {
 	public function possibly_remove_woocommerce_menu() {
 		global $menu;
 
-		if ( $this->is_admin_user() ) {
+		if ( self::is_admin_user() ) {
 			return;
 		}
 
@@ -164,6 +175,7 @@ class Homescreen {
 	 */
 	public function preload_options( $options ) {
 		$options[] = 'woocommerce_default_homepage_layout';
+		$options[] = 'woocommerce_admin_install_timestamp';
 
 		return $options;
 	}

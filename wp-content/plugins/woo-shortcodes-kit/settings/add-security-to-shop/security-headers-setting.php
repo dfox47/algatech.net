@@ -51,14 +51,14 @@ $pluginOptionsVal=get_wshk_sidebar_options();
         $siteurlwshk = get_site_url();
         $testurlwshk = 'https://securityheaders.com/?q='.$siteurlwshk.'&hide=on&followRedirects=on';
         ?>
-        <div><h3 style="font-weight:bold;letter-spacing:1px;"><span style="border-radius: 12px;font-family: Arial,Helvetica,sans-serif;text-align: center;margin: auto;width: 65px;height: 65px;font-size: 90px;line-height: 65px;color: #fff;font-weight: 700;background-color: #34af00;border: 2px solid #309d00;font-size:16px;padding:5px;">A+</span> <?php esc_html_e( 'SECURITY HEADERS SCAN', 'woo-shortcodes-kit' ); ?> <a style="border:1px solid transparent; border-radius:13px;padding:10px;background-color:#a46497;color:white;font-size:14px;" href="<?php echo $testurlwshk; ?>" target="_blank"><?php esc_html_e( 'CHECK YOUR SITE NOW', 'woo-shortcodes-kit' ); ?></a></h3><p><?php esc_html_e( 'If your test result follow in red, please close the test and wait 30-60 seconds before to check your site again', 'woo-shortcodes-kit' ); ?>.</p></div>
+        <div><h3 style="font-weight:bold;letter-spacing:1px;"><span style="border-radius: 12px;font-family: Arial,Helvetica,sans-serif;text-align: center;margin: auto;width: 65px;height: 65px;font-size: 90px;line-height: 65px;color: #fff;font-weight: 700;background-color: #34af00;border: 2px solid #309d00;font-size:16px;padding:5px;">A+</span> <?php esc_html_e( 'SECURITY HEADERS SCAN', 'woo-shortcodes-kit' ); ?> <a style="border:1px solid transparent; border-radius:13px;padding:10px;background-color:#60329b;color:white;font-size:14px;" href="<?php echo $testurlwshk; ?>" target="_blank"><?php esc_html_e( 'CHECK YOUR SITE NOW', 'woo-shortcodes-kit' ); ?></a></h3><p><?php esc_html_e( 'If your test result follow in red, please close the test and wait 30-60 seconds before to check your site again', 'woo-shortcodes-kit' ); ?>.</p></div>
         
     </div>
     <?php } else {?>
     <div>
         <table width="600px">
             
-            <tr><td width="70%" style="font-weight:bold;">HEADERS</td><td width="30%" style="font-weight:bold;">STATUS</td></tr><br><br>
+            <tr><td width="70%" style="font-weight:bold;"><?php esc_html_e( 'HEADERS', 'woo-shortcodes-kit' ); ?></td><td width="30%" style="font-weight:bold;"><?php esc_html_e( 'STATUS', 'woo-shortcodes-kit' ); ?></td></tr><br><br>
             
             <tr><td width="70%"><?php esc_html_e( 'Enforce the use of HTTPS', 'woo-shortcodes-kit' ); ?></td><td width="30%" style="color:red;"><?php esc_html_e( 'DISABLED', 'woo-shortcodes-kit' ); ?> <span class="dashicons dashicons-no-alt"></span></td></tr>
             
@@ -80,7 +80,7 @@ $pluginOptionsVal=get_wshk_sidebar_options();
         $siteurlwshk = get_site_url();
         $testurlwshk = 'https://securityheaders.com/?q='.$siteurlwshk.'&hide=on&followRedirects=on';
         ?>
-    <div><h3 style="font-weight:bold;letter-spacing:1px;"><span style="border-radius: 12px;font-family: Arial,Helvetica,sans-serif;text-align: center;margin: auto;width: 85px;height: 65px;font-size: 90px;line-height: 65px;color: #fff;font-weight: 700;background-color: red;border: 2px solid darkred;font-size:16px;padding:5px;">F</span> <?php esc_html_e( 'SECURITY HEADERS SCAN', 'woo-shortcodes-kit' ); ?> <a style="border:1px solid transparent; border-radius:13px;padding:10px;background-color:#a46497;color:white;font-size:14px;" href="<?php echo $testurlwshk; ?>" target="_blank"><?php esc_html_e( 'CHECK YOUR SITE NOW', 'woo-shortcodes-kit' ); ?></a></h3></div>
+    <div><h3 style="font-weight:bold;letter-spacing:1px;"><span style="border-radius: 12px;font-family: Arial,Helvetica,sans-serif;text-align: center;margin: auto;width: 85px;height: 65px;font-size: 90px;line-height: 65px;color: #fff;font-weight: 700;background-color: red;border: 2px solid darkred;font-size:16px;padding:5px;">F</span> <?php esc_html_e( 'SECURITY HEADERS SCAN', 'woo-shortcodes-kit' ); ?> <a style="border:1px solid transparent; border-radius:13px;padding:10px;background-color:#60329b;color:white;font-size:14px;" href="<?php echo $testurlwshk; ?>" target="_blank"><?php esc_html_e( 'CHECK YOUR SITE NOW', 'woo-shortcodes-kit' ); ?></a></h3></div>
     <?php } ?>
     <br />
     <br />
